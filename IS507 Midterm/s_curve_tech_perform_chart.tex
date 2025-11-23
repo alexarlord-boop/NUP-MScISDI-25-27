@@ -1,0 +1,79 @@
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=8cm,
+    xlabel={Cumulative R\&D Effort / Time},
+    ylabel={Technology Performance},
+    xmin=0, xmax=10,
+    ymin=-10, ymax=100,
+    xtick=\empty,
+    ytick={0,20,40,60,80,100},
+    grid=major,
+    legend pos=south east,
+    ylabel style={align=center},
+    xlabel style={align=center}
+]
+
+% Main S-curve for E-scooters/E-bikes (mature)
+\addplot[
+    domain=0:10,
+    samples=100,
+    color=red,
+    thick,
+    name path=scurve1
+] {80/(1+exp(-1.2*(x-5))) + 10};
+\addlegendentry{E-Scooters/E-bikes}
+
+% Mark current position
+\node[circle, fill=red, inner sep=3pt] at (axis cs:7.5,85) {};
+\node[align=left, font=\small] at (axis cs:8.5,75) {Current Position\\(Diminishing Returns)};
+
+% S-curve for AI/ML (mid-growth)
+\addplot[
+    domain=0:10,
+    samples=100,
+    color=green!70!black,
+    thick,
+    dashed
+] {85/(1+exp(-1.2*(x-5))) + 5};
+\addlegendentry{AI/ML Analytics}
+
+% Mark current position for AI/ML
+\node[circle, fill=green!70!black, inner sep=3pt] at (axis cs:5.3,55) {};
+\node[align=left, font=\small] at (axis cs:3.3,55) {High ROI\\Potential};
+
+% S-curve for Next-gen IoT (early growth)
+\addplot[
+    domain=0:10,
+    samples=100,
+    color=orange,
+    thick,
+    dotted
+] {88/(1+exp(-1.2*(x-6))) + 2};
+\addlegendentry{Next-Gen IoT}
+
+% Mark current position for Next-gen IoT
+\node[circle, fill=orange, inner sep=3pt] at (axis cs:5.3,29) {};
+
+% Emerging tech curve (just starting)
+\addplot[
+    domain=0:10,
+    samples=100,
+    color=purple,
+    thick,
+    dashdotted
+] {90/(1+exp(-1.2*(x-7))) + 0};
+\addlegendentry{Blockchain/Autonomous}
+
+% Mark current position for emerging
+\node[circle, fill=purple, inner sep=3pt] at (axis cs:3,1.5) {};
+\node[align=left, font=\small] at (axis cs:3,2) {Early Stage\\(High Risk)};
+
+% Performance threshold line
+\draw[dashed, gray, thick] (axis cs:0,60) -- (axis cs:10,60);
+\node[align=left, font=\small, gray] at (axis cs:1,65) {Competitive\\Threshold};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
