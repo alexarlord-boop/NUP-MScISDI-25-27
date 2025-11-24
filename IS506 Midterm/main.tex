@@ -1,0 +1,72 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+
+\addbibresource{sample.bib} %Imports bibliography file
+
+\begin{document}
+
+
+% ---------------------------
+% Title page (custom)
+% ---------------------------
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[width=5cm]{nup_logo.png} \\[1cm]
+    {\Large Neapolis University Pafos} \\[0.5cm]
+
+    {\large \textbf{Course Code:} IS506} \\[2cm]
+
+    {\huge \textbf{IT Project Management Midterm}} \\[1.5cm]
+
+    {\large \textbf{Name:} Aleksandr Petrunin} \\[0.3cm]
+    {\large \textbf{Student ID:} 1251114137} \\[2cm]
+
+    {\large \today}
+  \end{center}
+\end{titlepage}
+
+\begin{landscape}
+\section{Q1 (40 points)}
+
+% \input{wbs_diagram.tex}
+\input{wbs.tex}
+
+\newpage
+\section{Q2 (60 points)}
+
+
+\end{landscape}
+
+
+
+
+
+
+
+\newpage
+\printbibliography
+\nocite{*}
+
+\end{document}

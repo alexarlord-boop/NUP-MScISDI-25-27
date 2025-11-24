@@ -1,0 +1,197 @@
+% WBS Diagram - Tree structure from top to bottom
+\begin{tikzpicture}[
+    node distance=0.4cm and 0.8cm,
+    level1/.style={rectangle, draw, fill=blue!20, text width=2.2cm, align=center, minimum height=0.6cm, font=\small\bfseries},
+    level2/.style={rectangle, draw, fill=green!15, text width=2cm, align=center, minimum height=0.55cm, font=\footnotesize},
+    level3/.style={rectangle, draw, fill=yellow!15, text width=1.9cm, align=center, minimum height=0.5cm, font=\scriptsize},
+    line/.style={draw, -latex'}
+]
+
+% Level 1 - Main Categories (arranged horizontally)
+\node[level1] (req) at (0,0) {1. Requirements};
+\node[level1] (des) [right=of req] {2. Design};
+\node[level1] (dev) [right=of des] {3. Development};
+\node[level1] (test) [right=of dev] {4. Testing};
+\node[level1] (dep) [right=of test] {5. Deployment};
+\node[level1] (pm) [right=of dep] {6. Project\\Management};
+
+% Root at top - centered above Level 1
+\node[rectangle, draw, fill=red!20, text width=4cm, align=center, minimum height=1cm, font=\bfseries] (root) at ($(req)!0.5!(pm) + (0,2)$) {Mobile Banking Application WBS};
+
+% 1. Requirements subtree - with indentation for Level 3
+\node[level2] (req1) [below=of req] {1.1 Stakeholder\\interviews};
+\node[level2] (req2) [below=of req1] {1.2 Listing of\\feature set};
+\node[level2] (req3) [below=of req2] {1.3 Prioritization\\of feature set};
+
+\node[level3] (req11) [below=of req3, xshift=-0.3cm] {1.1.1 Conduct\\3 interviews};
+\node[level3] (req12) [below=of req11, xshift=0cm] {1.1.2 Cover gaps\\and needs};
+\node[level3] (req13) [below=of req12, xshift=0cm] {1.1.3 Implement\\knowledge base};
+\node[level3] (req21) [below=of req13, xshift=0.3cm] {1.2.1\\Non-functional};
+\node[level3] (req22) [below=of req21, xshift=0cm] {1.2.2\\Functional};
+\node[level3] (req31) [below=of req22, xshift=0.3cm] {1.3.1 MOST\\analysis};
+\node[level3] (req32) [below=of req31, xshift=0cm] {1.3.2 SWOT\\analysis};
+\node[level3] (req33) [below=of req32, xshift=0cm] {1.3.3 MoSCoW\\analysis};
+
+% 2. Design subtree - with indentation for Level 3
+\node[level2] (des1) [below=of des] {2.1 UX};
+\node[level2] (des2) [below=of des1] {2.2 Design\\System};
+\node[level2] (des3) [below=of des2] {2.3 UI};
+
+\node[level3] (des11) [below=of des3, xshift=-0.3cm] {2.1.1 Create\\personas};
+\node[level3] (des12) [below=of des11, xshift=0cm] {2.1.2 Brainstorm\\user flows};
+\node[level3] (des13) [below=of des12, xshift=0cm] {2.1.3 Cross\\validate};
+\node[level3] (des21) [below=of des13, xshift=0.3cm] {2.2.1 Implement\\visuals};
+\node[level3] (des22) [below=of des21, xshift=0cm] {2.2.2 Build\\components};
+\node[level3] (des31) [below=of des22, xshift=0.3cm] {2.3.1 Create\\Mockups};
+\node[level3] (des32) [below=of des31, xshift=0cm] {2.3.2 Create\\wireframes};
+\node[level3] (des33) [below=of des32, xshift=0cm] {2.3.3 Validate\\wireframes};
+\node[level3] (des34) [below=of des33, xshift=0cm] {2.3.4 Create\\figma screens};
+
+% 3. Development subtree - with indentation for Level 3
+\node[level2] (dev1) [below=of dev] {3.1 API\\Implementation};
+\node[level2] (dev2) [below=of dev1] {3.2 App\\Backend};
+\node[level2] (dev3) [below=of dev2] {3.3 App\\Frontend};
+
+\node[level3] (dev11) [below=of dev3, xshift=-0.3cm] {3.1.1 Domain\\Analysis};
+\node[level3] (dev12) [below=of dev11, xshift=0cm] {3.1.2 OpenAPI\\spec};
+\node[level3] (dev13) [below=of dev12, xshift=0cm] {3.1.3 Describe\\endpoints};
+\node[level3] (dev21) [below=of dev13, xshift=0.3cm] {3.2.1 Build DDD\\structures};
+\node[level3] (dev22) [below=of dev21, xshift=0cm] {3.2.2 Separate\\modules};
+\node[level3] (dev23) [below=of dev22, xshift=0cm] {3.2.3 Implement\\OAS};
+\node[level3] (dev31) [below=of dev23, xshift=0.3cm] {3.3.1 Create\\mock data};
+\node[level3] (dev32) [below=of dev31, xshift=0cm] {3.3.2 Wire GUI\\client};
+\node[level3] (dev33) [below=of dev32, xshift=0cm] {3.3.3 Build\\UI};
+
+% 4. Testing subtree - with indentation for Level 3
+\node[level2] (test1) [below=of test] {4.1 Unit};
+\node[level2] (test2) [below=of test1] {4.2 Integration};
+\node[level2] (test3) [below=of test2] {4.3 Regression};
+
+\node[level3] (test11) [below=of test3, xshift=-0.3cm] {4.1.1 Write\\unit tests};
+\node[level3] (test12) [below=of test11, xshift=0cm] {4.1.2 Integrate into\\pipelines};
+\node[level3] (test21) [below=of test12, xshift=0.3cm] {4.2.1 Write\\integration tests};
+\node[level3] (test22) [below=of test21, xshift=0cm] {4.2.2 Validate\\cohesion};
+\node[level3] (test31) [below=of test22, xshift=0.3cm] {4.3.1 Full\\testing};
+\node[level3] (test32) [below=of test31, xshift=0cm] {4.3.2 Identify\\issues};
+
+% 5. Deployment subtree - with indentation for Level 3
+\node[level2] (dep1) [below=of dep] {5.1 GitOps\\infrastructure};
+\node[level2] (dep2) [below=of dep1] {5.2 Development\\stage};
+\node[level2] (dep3) [below=of dep2] {5.3 Staging\\environment};
+\node[level2] (dep4) [below=of dep3] {5.4 Production\\stage};
+
+\node[level3] (dep11) [below=of dep4, xshift=-0.3cm] {5.1.1 Create\\repositories};
+\node[level3] (dep12) [below=of dep11, xshift=0cm] {5.1.2 Create\\resources};
+\node[level3] (dep13) [below=of dep12, xshift=0cm] {5.1.3 Support\\canary};
+\node[level3] (dep21) [below=of dep13, xshift=0.3cm] {5.2.1 Setup\\servers};
+\node[level3] (dep22) [below=of dep21, xshift=0cm] {5.2.2 Spin up\\VMs};
+\node[level3] (dep31) [below=of dep22, xshift=0.3cm] {5.3.1 Setup\\staging};
+\node[level3] (dep32) [below=of dep31, xshift=0cm] {5.3.2 Setup\\RBAC};
+\node[level3] (dep33) [below=of dep32, xshift=0cm] {5.3.3 Setup\\gates};
+\node[level3] (dep41) [below=of dep33, xshift=0.3cm] {5.4.1 Setup\\production};
+\node[level3] (dep42) [below=of dep41, xshift=0cm] {5.4.2 Connect\\metrics};
+
+% 6. Project Management subtree - with indentation for Level 3
+\node[level2] (pm1) [below=of pm] {6.1 Resources};
+\node[level2] (pm2) [below=of pm1] {6.2 Timeline};
+\node[level2] (pm3) [below=of pm2] {6.3 Risks};
+
+\node[level3] (pm11) [below=of pm3, xshift=-0.3cm] {6.1.1 Assess\\resources};
+\node[level3] (pm12) [below=of pm11, xshift=0cm] {6.1.2 Cover\\overheads};
+\node[level3] (pm21) [below=of pm12, xshift=0.3cm] {6.2.1 Assess\\time bounds};
+\node[level3] (pm22) [below=of pm21, xshift=0cm] {6.2.2 Cover\\critical tasks};
+\node[level3] (pm31) [below=of pm22, xshift=0.3cm] {6.3.1 Prioritize\\by risk};
+\node[level3] (pm32) [below=of pm31, xshift=0cm] {6.3.2 Mitigation\\plan};
+\node[level3] (pm33) [below=of pm32, xshift=0cm] {6.3.3 Monitoring\\strategy};
+
+% Draw connections from root to Level 1
+\draw[line] (root) -| (req);
+\draw[line] (root) -- (des);
+\draw[line] (root) -- (dev);
+\draw[line] (root) -- (test);
+\draw[line] (root) -- (dep);
+\draw[line] (root) -| (pm);
+
+% Draw connections Level 1 to Level 2
+\draw[line] (req.west) --  (req1.west);
+\draw[line] (req) to[out=180, in=180] (req2);
+\draw[line] (req) to[out=180, in=180] (req3);
+
+\draw[line] (des) to[out=180, in=180] (des1);
+\draw[line] (des) to[out=180, in=180] (des2);
+\draw[line] (des) to[out=180, in=180] (des3);
+
+\draw[line] (dev) to[out=180, in=180] (dev1);
+\draw[line] (dev) to[out=180, in=180] (dev2);
+\draw[line] (dev) to[out=180, in=180] (dev3);
+
+\draw[line] (test) to[out=180, in=180] (test1);
+\draw[line] (test) to[out=180, in=180] (test2);
+\draw[line] (test) to[out=180, in=180] (test3);
+
+\draw[line] (dep) to[out=180, in=180] (dep1);
+\draw[line] (dep) to[out=180, in=180] (dep2);
+\draw[line] (dep) to[out=180, in=180] (dep3);
+\draw[line] (dep) to[out=180, in=180] (dep4);
+
+\draw[line] (pm) to[out=180, in=180] (pm1);
+\draw[line] (pm) to[out=180, in=180] (pm2);
+\draw[line] (pm) to[out=180, in=180] (pm3);
+
+% Draw connections Level 2 to Level 3
+\draw[line] (req1) to[out=180, in=180] (req11);
+\draw[line] (req1) to[out=180, in=180] (req12);
+\draw[line] (req1) to[out=180, in=180] (req13);
+\draw[line] (req2) to[out=180, in=180] (req21);
+\draw[line] (req2) to[out=180, in=180] (req22);
+\draw[line] (req3) to[out=180, in=180] (req31);
+\draw[line] (req3) to[out=180, in=180] (req32);
+\draw[line] (req3) to[out=180, in=180] (req33);
+
+\draw[line] (des1) to[out=180, in=180] (des11);
+\draw[line] (des1) to[out=180, in=180] (des12);
+\draw[line] (des1) to[out=180, in=180] (des13);
+\draw[line] (des2) to[out=180, in=180] (des21);
+\draw[line] (des2) to[out=180, in=180] (des22);
+\draw[line] (des3) to[out=180, in=180] (des31);
+\draw[line] (des3) to[out=180, in=180] (des32);
+\draw[line] (des3) to[out=180, in=180] (des33);
+\draw[line] (des3) to[out=180, in=180] (des34);
+
+\draw[line] (dev1) to[out=180, in=180] (dev11);
+\draw[line] (dev1) to[out=180, in=180] (dev12);
+\draw[line] (dev1) to[out=180, in=180] (dev13);
+\draw[line] (dev2) to[out=180, in=180] (dev21);
+\draw[line] (dev2) to[out=180, in=180] (dev22);
+\draw[line] (dev2) to[out=180, in=180] (dev23);
+\draw[line] (dev3) to[out=180, in=180] (dev31);
+\draw[line] (dev3) to[out=180, in=180] (dev32);
+\draw[line] (dev3) to[out=180, in=180] (dev33);
+
+\draw[line] (test1) to[out=180, in=180] (test11);
+\draw[line] (test1) to[out=180, in=180] (test12);
+\draw[line] (test2) to[out=180, in=180] (test21);
+\draw[line] (test2) to[out=180, in=180] (test22);
+\draw[line] (test3) to[out=180, in=180] (test31);
+\draw[line] (test3) to[out=180, in=180] (test32);
+
+\draw[line] (dep1) to[out=180, in=180] (dep11);
+\draw[line] (dep1) to[out=180, in=180] (dep12);
+\draw[line] (dep1) to[out=180, in=180] (dep13);
+\draw[line] (dep2) to[out=180, in=180] (dep21);
+\draw[line] (dep2) to[out=180, in=180] (dep22);
+\draw[line] (dep3) to[out=180, in=180] (dep31);
+\draw[line] (dep3) to[out=180, in=180] (dep32);
+\draw[line] (dep3) to[out=180, in=180] (dep33);
+\draw[line] (dep4) to[out=180, in=180] (dep41);
+\draw[line] (dep4) to[out=180, in=180] (dep42);
+
+\draw[line] (pm1) to[out=180, in=180] (pm11);
+\draw[line] (pm1) to[out=180, in=180] (pm12);
+\draw[line] (pm2) to[out=180, in=180] (pm21);
+\draw[line] (pm2) to[out=180, in=180] (pm22);
+\draw[line] (pm3) to[out=180, in=180] (pm31);
+\draw[line] (pm3) to[out=180, in=180] (pm32);
+\draw[line] (pm3) to[out=180, in=180] (pm33);
+
+\end{tikzpicture}
