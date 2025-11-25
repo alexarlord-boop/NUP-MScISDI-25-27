@@ -6,7 +6,8 @@
 
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[letterpaper,top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1cm]{geometry}
+\usepackage[letterpaper,top=0.5cm,bottom=0.5cm,left=0.5cm,right=0.5cm,marginparwidth=1
+0cm]{geometry}
 
 % Useful packages
 \usepackage{amsmath}
@@ -15,7 +16,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{pdflscape}
 \usepackage{tikz}
-\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\usetikzlibrary{arrows,arrows.meta,shapes,positioning,shadows,trees}
 
 \usepackage[
 backend=biber,
@@ -50,12 +51,50 @@ style=ieee,
 \begin{landscape}
 \section{Q1 (40 points)}
 
-% \input{wbs_diagram.tex}
 \input{wbs.tex}
 
 \newpage
 \section{Q2 (60 points)}
 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ c|c|c|c|c|c|c|c|c|c|c| } 
+ \hline
+ activity: & A & B & C & D & E & F & G & H & I & J \\
+ \hline 
+ duration: & 2 & 5 & 3 & 7 & 3 & 4 & 3 & 3 & 4 & 2 \\
+ \hline 
+ slack:    & 0 & 0 & 5 & 0 & 4 & 5 & 0 & 1 & 0 & 0 \\
+ \hline
+\end{tabular}
+\caption{Activity durations and slack times}
+\end{center}
+\end{table}
+
+
+\input{aon.tex}
+
+\centering
+
+
+\begin{description}
+  \item[Forward Pass:] Definition of earliest start times based on earliest finish (EF) times.
+  \begin{itemize}
+      \item G: max( D\textsubscript{EF} = 14, E\textsubscript{EF} = 10, F\textsubscript{EF} = 9 ) = 14
+      \item J: max( H\textsubscript{EF} = 20, I\textsubscript{EF} = 21 ) = 21
+    \end{itemize}
+    \item[Backward Pass:] Definition of latest finish times based on latest start (LS) times.
+    \begin{itemize}
+      \item G: min( H\textsubscript{LS} = 18, I\textsubscript{LS} = 17 ) = 17
+      \item B: min( D\textsubscript{LS} = 7, E\textsubscript{LS} = 11 ) = 7
+      \item A: min( B\textsubscript{LS} = 2, C\textsubscript{LS} = 7 ) = 2
+    \end{itemize}
+\end{description}
+
+
+\paragraph{Critical Path:} A $\to$ B $\to$ D $\to$ G $\to$ I $\to$ J
+
+\paragraph{Project duration:} 23 days
 
 \end{landscape}
 

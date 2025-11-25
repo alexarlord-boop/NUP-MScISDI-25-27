@@ -1,0 +1,82 @@
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+    node distance=2.8cm,
+    >=Stealth,
+    activity/.style={
+        circle,
+        draw,
+        minimum size=1.2cm,
+        font=\large
+    },
+    crit/.style={very thick, -{Stealth[length=3mm]}, draw=green!60!black},
+    normal/.style={-{Stealth[length=2mm]}},
+    times/.style n args={4}{
+        append after command={
+           \pgfextra{
+            \node[above left,  font=\bfseries, inner sep=12pt] at (\tikzlastnode) {#1};
+            \node[above right, font=\bfseries, inner sep=12pt] at (\tikzlastnode) {#2};
+            \node[below left,  font=\bfseries, inner sep=12pt] at (\tikzlastnode) {#3};
+            \node[below right, font=\bfseries, inner sep=12pt] at (\tikzlastnode) {#4};
+        }
+        }
+    },
+    times/.default={0}{0}{0}{0}
+]
+
+% ROW 1
+
+\node[activity, times={0}{2}{0}{2}] (A) {A};
+\node[activity, times={2}{7}{2}{7}, right of=A] (B) {B};
+\node[activity, times={2}{5}{7}{10}, below of=B] (C) {C};
+
+% ROW 2
+\node[activity, times={7}{14}{7}{14}, right of=B] (D) {D};
+\node[activity, times={7}{10}{11}{14}, below of=D] (E) {E};
+\node[activity, times={5}{9}{10}{14}, below of=E] (F) {F};
+
+% ROW 3
+\node[activity, times={14}{17}{14}{17}, right of=D, yshift=-0.8cm] (G) {G};
+
+% ROW 4
+\node[activity, times={17}{20}{18}{21}, right of=G, yshift=8mm] (H) {H};
+\node[activity, times={17}{21}{17}{21}, right of=G, yshift=-8mm] (I) {I};
+
+% ROW 5
+\node[activity, times={21}{23}{21}{23}, right of=H, yshift=-8mm] (J) {J};
+
+% --- ARROWS WITH DURATIONS ---
+% From A
+\draw[crit]   (A) --  (B);
+\draw[normal] (A) --  (C);
+
+% From B
+\draw[crit]   (B) --  (D);
+\draw[normal] (B) --  (E);
+
+% From C
+\draw[normal] (C) --  (F);
+
+% From D
+\draw[crit]   (D) --  (G);
+
+% From E
+\draw[normal] (E) --  (G);
+
+% From F
+\draw[normal] (F) -- (G);
+
+% From G
+\draw[normal] (G) -- (H);
+\draw[crit]   (G) -- (I);
+
+% From H
+\draw[normal] (H) -- (J);
+
+% From I
+\draw[crit]   (I) -- (J);
+
+\end{tikzpicture}
+\caption{Activity on Node (AON) Diagram}
+\end{figure}

@@ -41,8 +41,8 @@
 \node [below of = c41, yshift=-120pt] (c42) {4.2 Integration testing};
 \node [below of = c42, yshift=-120pt] (c43) {4.3 Regression testing};
 \node [below of = c5, xshift=15pt] (c51) {5.1 GitOps infrastructure};
-\node [below of = c51, yshift=-120pt] (c52) {5.2 Development stage};
-\node [below of = c52, yshift=-75pt] (c53) {5.3 Staging environment};
+\node [below of = c51, yshift=-110pt] (c52) {5.2 Development stage};
+\node [below of = c52, yshift=-70pt] (c53) {5.3 Staging environment};
 \node [below of = c53, yshift=-100pt] (c54) {5.4 Production stage};
 
 \node [below of = c6, xshift=15pt] (c61) {6.1 Resources};
@@ -52,73 +52,70 @@
 
 % The third level
 \begin{scope}[every node/.style={level4}]
-\node [below of = c11, xshift=15pt] (c111) {1.1.1 Conduct 3+ interviews};
-\node [below of = c111, yshift=-5pt] (c112) {1.1.2 Cover gaps and needs};
-\node [below of = c112, yshift=-5pt] (c113) {1.1.3 Create knowledge base};
+\node [below of = c11, xshift=15pt] (c111) {1.1.1 3+ interviews};
+\node [below of = c111, yshift=-5pt] (c112) {1.1.2 Work document outline};
+\node [below of = c112, yshift=-5pt] (c113) {1.1.3 Knowledge base creation};
 
 \node [below of = c12, xshift=15pt] (c121) {1.2.1 Non-functional};
 \node [below of = c121, yshift=-5pt] (c122) {1.2.2 Functional};
 
-\node [below of = c13, xshift=15pt] (c131) {1.3.1 MOST analysis};
-\node [below of = c131, yshift=-5pt] (c132) {1.3.2 SWOT analysis};
-\node [below of = c132, yshift=-5pt] (c133) {1.3.3 MoSCoW analysis};
+\node [below of = c13, xshift=15pt] (c131) {1.3.1 MOST analysis artifact};
+\node [below of = c131, yshift=-5pt] (c132) {1.3.2 SWOT analysis artifact};
+\node [below of = c132, yshift=-5pt] (c133) {1.3.3 MoSCoW analysis artifact};
 
-\node [below of = c21, xshift=15pt] (c211) {2.1.1 Create 5-10 personas};
-\node [below of = c211, yshift=-5pt] (c212) {2.1.2 Brainstorm user flows};
-\node [below of = c212, yshift=-5pt] (c213) {2.1.3 Cross validate with users};
+\node [below of = c21, xshift=15pt] (c211) {2.1.1 Ten personas creation};
+\node [below of = c211, yshift=-5pt] (c212) {2.1.2 User flows brainstorming};
+\node [below of = c212, yshift=-5pt] (c213) {2.1.3 Cross validation with users};
 
-\node [below of = c22, xshift=15pt] (c221) {2.2.1 Implement visuals};
-\node [below of = c221, yshift=-5pt] (c222) {2.2.2 Build core components};
+\node [below of = c22, xshift=15pt] (c221) {2.2.1 Visuals code implementation};
+\node [below of = c221, yshift=-5pt] (c222) {2.2.2 Core UI components creation};
 
-\node [below of = c23, xshift=15pt] (c231) {2.3.1 Create mockups};
-\node [below of = c231, yshift=-5pt] (c232) {2.3.2 Create wireframes};
-\node [below of = c232, yshift=-5pt] (c233) {2.3.3 Validate wireframes};
-\node [below of = c233, yshift=-5pt] (c234) {2.3.4 Create figma screens};
+\node [below of = c23, xshift=15pt] (c231) {2.3.1 Mockups creation};
+\node [below of = c231, yshift=-5pt] (c232) {2.3.2 Wireframes creation};
+\node [below of = c232, yshift=-5pt] (c233) {2.3.3 Wireframes validation};
+\node [below of = c233, yshift=-5pt] (c234) {2.3.4 Figma screens creation};
 
-\node [below of = c31, xshift=15pt] (c311) {3.1.1 Analyze domain};
+\node [below of = c31, xshift=15pt] (c311) {3.1.1 Domain analysis};
 \node [below of = c311, yshift=-5pt] (c312) {3.1.2 OpenApi specification};
-\node [below of = c312, yshift=-5pt] (c313) {3.1.3 Describe endpoints};
+\node [below of = c312, yshift=-5pt] (c313) {3.1.3 Endpoints description};
 
-\node [below of = c32, xshift=15pt] (c321) {3.2.1 Build DDD structures};
-\node [below of = c321, yshift=-5pt] (c322) {3.2.2 Separate into modules};
-\node [below of = c322, yshift=-5pt] (c323) {3.2.3 Implement OAS};
+\node [below of = c32, xshift=15pt] (c321) {3.2.1 DDD structures build};
+\node [below of = c321, yshift=-5pt] (c322) {3.2.2 Modules decomposition};
+\node [below of = c322, yshift=-5pt] (c323) {3.2.3 OAS integration};
 
-\node [below of = c33, xshift=15pt] (c331) {3.3.1 Create mock data};
-\node [below of = c331, yshift=-5pt] (c332) {3.3.2 Wire GUI with OAS};
-\node [below of = c332, yshift=-5pt] (c333) {3.3.3 Build UI};
+\node [below of = c33, xshift=15pt] (c331) {3.3.1 Mock data creation};
+\node [below of = c331, yshift=-5pt] (c332) {3.3.2 GUI wiring with OAS};
+\node [below of = c332, yshift=-5pt] (c333) {3.3.3 UI build};
 
-\node [below of = c41, xshift=15pt] (c411) {4.1.1 Write unit tests};
-\node [below of = c411, yshift=-5pt] (c412) {4.1.2 Integrate into pipelines};
+\node [below of = c41, xshift=15pt] (c411) {4.1.1 Unit tests writing};
+\node [below of = c411, yshift=-5pt] (c412) {4.1.2 Pipeline integration};
 
-\node [below of = c42, xshift=15pt] (c421) {4.2.1 Write integration tests};
-\node [below of = c421, yshift=-5pt] (c422) {4.2.2 Validate system cohesion};
-
+\node [below of = c42, xshift=15pt] (c421) {4.2.1 Integration tests writing};
+\node [below of = c421, yshift=-5pt] (c422) {4.2.2 System cohesion validation};
 \node [below of = c43, xshift=15pt] (c431) {4.3.1 Test with user in loop};
-\node [below of = c431, yshift=-5pt] (c432) {4.3.2 Identify underdeveloped features};
+\node [below of = c431, yshift=-5pt] (c432) {4.3.2 Underdeveloped features identification};
 
-\node [below of = c51, xshift=15pt] (c511) {5.1.1 Create repositories};
-\node [below of = c511, yshift=-5pt] (c512) {5.1.2 Create K8s resources};
-\node [below of = c512, yshift=-5pt] (c513) {5.1.3 Support canary deployment};
+\node [below of = c51, xshift=15pt] (c511) {5.1.1 Repositories setup};
+\node [below of = c511, yshift=-5pt] (c512) {5.1.2 K8s resources creation};
+\node [below of = c512, yshift=-5pt] (c513) {5.1.3 Canary deployment support};
 
-\node [below of = c52, xshift=15pt] (c521) {5.2.1 Set up dev servers};
-\node [below of = c521, yshift=-5pt] (c522) {5.2.2 Spin up VMs and storage};
+\node [below of = c52, xshift=15pt] (c521) {5.2.1 Dev servers setup};
+\node [below of = c521, yshift=-5pt] (c522) {5.2.2 VMs and storage setup};
 
-\node [below of = c53, xshift=15pt] (c531) {5.3.1 Set up staging env};
-\node [below of = c531, yshift=-5pt] (c532) {5.3.2 Set up secure RBAC};
-\node [below of = c532, yshift=-5pt] (c533) {5.3.3 Set up quality gates};
+\node [below of = c53, xshift=15pt] (c531) {5.3.1 Staging environment setup};
+\node [below of = c531, yshift=-10pt] (c532) {5.3.2 Secure RBAC setup};
+\node [below of = c532, yshift=-5pt] (c533) {5.3.3 Quality gates setup};
+\node [below of = c54, xshift=15pt] (c541) {5.4.1 Production setup};
+\node [below of = c541, yshift=-5pt] (c542) {5.4.2 Metrics/logging connection};
 
-\node [below of = c54, xshift=15pt] (c541) {5.4.1 Set up production};
-\node [below of = c541, yshift=-5pt] (c542) {5.4.2 Connect metrics/logging};
+\node [below of = c61, xshift=15pt] (c611) {6.1.1 Resources/budget assessment};
+\node [below of = c611, yshift=-15pt] (c612) {6.1.2 Overheads/risks coverage};
 
-\node [below of = c61, xshift=15pt] (c611) {6.1.1 Assess resources/budget};
-\node [below of = c611, yshift=-5pt] (c612) {6.1.2 Cover overheads/risks};
-
-\node [below of = c62, xshift=15pt] (c621) {6.2.1 Assess time bounds};
-\node [below of = c621, yshift=-5pt] (c622) {6.2.2 Cover critical tasks};
-
-\node [below of = c63, xshift=15pt] (c631) {6.3.1 Prioritize by risk};
-\node [below of = c631, yshift=-5pt] (c632) {6.3.2 Prepare mitigation plan};
-\node [below of = c632, yshift=-5pt] (c633) {6.3.3 Prepare monitoring strategy};
+\node [below of = c62, xshift=15pt] (c621) {6.2.1 Time bounds assessment};
+\node [below of = c621, yshift=-10pt] (c622) {6.2.2 Critical tasks coverage};
+\node [below of = c63, xshift=15pt] (c631) {6.3.1 Risk prioritization};
+\node [below of = c631, yshift=-5pt] (c632) {6.3.2 Mitigation plan preparation};
+\node [below of = c632, yshift=-10pt] (c633) {6.3.3 Monitoring strategy preparation};
 \end{scope}
 
 
