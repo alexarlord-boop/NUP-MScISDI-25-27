@@ -48,14 +48,6 @@ style=ieee,
 \newpage
 
 \raggedright
-\textit{\textbf{Keywords}:} small language models (SLMs), tuning methods, knowledge distillation, ethical considerations, critical thinking, reasoning performance, efficient compressing, artificial general intelligence (AGI), 
-
-\begin{abstract}
-
-\end{abstract}  
-
-
-
 \section{Introduction}
 
 Core Idea: Implementing structured, non-NLP agent communication in multi-agent systems.\\
@@ -67,42 +59,46 @@ Goal: Establish research territory (broad academic landscape + demo knowledge of
 \textbf{Strategy:} Relevant + credible sources + historical context with current issues + balance depth and breadth.
 
 
+
 \subsubsection{Broad context}
 \subparagraph{}
 The advancement of Large Language Models (LLMs) has ushered in 
 a new era of autonomous AI agents capable of performing complex tasks 
-with minimal human intervention. Multi-agent systems (MAS) tend to outperform single-agent systems due to the larger pool of shared resources.
-These systems can revolutionize industries by automating workflows and optimizing decision-making.
+with minimal human intervention \cite{yang2024llm}. Multi-agent systems (MAS) tend to outperform single-agent systems due to the larger pool of shared resources, coordination and specialization \cite{ye2025x}.
+These systems can revolutionize industries by automating workflows and optimizing decision-making \cite{Chen2024PromiseOfMultiAgentAI}.
 Businesses and individuals can leverage LLMs to build autonomous multi-agent systems with frameworks, such as AutoGPT,
-MetaGPT, and Langchain.
+CrewAI, and Langchain \cite{Sinha2025RiseOfMAS} \cite{Sinha2025BuildingMultiAgent}.
 
 
 
 \subsubsection{Narrow focus}
+\subparagraph{}
 However, current implementations of multi-agent systems predominantly rely on natural language processing (NLP) for inter-agent communication.
-Agent-to-agent communication through natural language introduces several challenges, including ambiguity, misinterpretation, and inefficiencies in task execution.
-A pool of protocols and orchestration mechanisms for structured communication between agents exists. 
+Agent-to-agent communication through natural language introduces several challenges, including ambiguity, misinterpretation, and inefficiencies in task execution \cite{zhou2025ai}.
+A pool of protocols and orchestration mechanisms for structured communication between agents exists \cite{Yang2025SurveyAIProtocol}. 
 
 \subparagraph{Older agent communication standards.} 
-FIPA Agent Communication Language (ACL) defines a set of communicative acts and message structures for agent communication. 
-KQML (Knowledge Query and Manipulation Language) is another early standard that provides a framework for knowledge sharing and querying among agents.
+FIPA Agent Communication Language (ACL) defines a set of communicative acts and message structures for agent communication \cite{inbook}. 
+KQML (Knowledge Query and Manipulation Language) is another early standard that provides a framework for knowledge sharing and querying among agents \cite{Finin1994KQML}.
 Both are incopatible with modern JSON APIs and never saw wide adoption outside of academic circles.
 
 \subparagraph{Current solutions.}
-OpenAI Swarm IPC is an orchestration mechanism, growing adoption in OpenAI ecosystem, not an inter-agent communication protocol.
-Model context protocol (MCP) by Anthropic provides a standardized way for AI models to connect with and use external tools and data sources. It is a client-to-agent protocol.
+OpenAI Agents SDK is an orchestration mechanism, growing adoption in OpenAI ecosystem, not an inter-agent communication protocol \cite{OpenAI-Agents-Python}.
+Model context protocol (MCP) by Anthropic provides a standardized way for AI models to connect with and use external tools and data sources - it is a client-to-agent protocol \cite{Anthropic2024_MCP}.
 
 \subparagraph{Emerging standard.}
-With ACP’s recent merger into Google’s A2A under the Linux Foundation, A2A is rapidly becoming the dominant open standard for agent-to-agent communication. 
-In contrast to OpenAI Swarm, which provides only local IPC semantics, and the Model Context Protocol (MCP), which focuses on client-to-agent tool invocation, A2A is explicitly architected for distributed multi-agent systems. 
-It defines message envelopes, routing, agent metadata, capability discovery, and extensible JSON-based interaction primitives.
+With ACP’s recent merger into Google’s A2A under the Linux Foundation, A2A is rapidly becoming the dominant open standard for agent-to-agent communication \cite{LinuxFoundation2025_A2A}. 
+In contrast to OpenAI Agents SDK, which provides only local IPC semantics, and the Model Context Protocol (MCP), which focuses on client-to-agent tool invocation, A2A is explicitly architected for distributed multi-agent systems. 
+It defines message envelopes, routing, agent metadata, capability discovery, and extensible JSON-based interaction primitives \cite{A2A2025}.
 
 \subsubsection{Specific gap}
-Google's A2A, now the Linux Foundation–governed successor to IBM's ACP, provides a much-needed open standard for agent interoperability. 
+\subparagraph{}
+A2A protocol provides a much-needed open standard for agent interoperability. 
 However, like its predecessors—and much like KQML and FIPA-ACL before it—A2A standardizes only the syntax of communication, not its semantics. It does not prescribe performatives, ontologies, shared meaning representations, or reasoning-level guarantees. 
-This semantic gap motivates research into typed, non-NLP communication layers that can enable more reliable, verifiable, and deterministic multi-agent behavior.
+This semantic gap motivates research into typed, non-NLP communication layers that can enable more reliable, verifiable, and deterministic multi-agent behavior - exploring guarantees that agents understands each other beyond message structure.
 
 \subsubsection{Solution}
+\subparagraph{}
 We propose a typed, structured communication layer on top of the emerging A2A protocol. This layer introduces formal message semantics, performatives, and constraints to ensure deterministic agent interactions. Unlike current approaches that rely on natural-language wrappers, the proposed solution enforces verifiable communication rules, enabling agents to negotiate, coordinate, and delegate tasks reliably. The solution leverages A2A’s existing transport, discovery, and lifecycle mechanisms, while filling the semantic gap that remains unaddressed.
 
 
@@ -110,6 +106,7 @@ We propose a typed, structured communication layer on top of the emerging A2A pr
 Goal: Identify knowledge gaps(what remains unknown and unexplored $\to$ justify research).\\
 LR $\to$ Gap analysis $\to$ problem statement/research aims.
 
+\subparagraph{}
 Although A2A standardizes message envelopes, routing, and agent discovery, it does not define semantics, message types, or reasoning-level guarantees. This results in:
 \begin{itemize}
   \item Ambiguity in multi-agent task coordination;
@@ -121,14 +118,14 @@ Although A2A standardizes message envelopes, routing, and agent discovery, it do
   \item Lack of formal verification of interactions.
 \end{itemize}
 
-Knowledge gaps: How can agents communicate deterministically and reliably without relying on natural-language prompts? Existing protocols (MCP, Swarm IPC) address tool or in-process communication, and historical protocols (KQML, FIPA-ACL) either failed to scale or are obsolete. This gap motivates the research aim: design a typed, non-NLP communication layer to improve reliability, verifiability, and coordination in MAS.
+Knowledge gaps: How can agents communicate deterministically and reliably without relying on natural-language prompts? Existing protocols (MCP, OpenAI Agents SDK) address tool or in-process communication, and historical protocols (KQML, FIPA-ACL) either failed to scale or are obsolete. We aim to build communication layers on top of A2A that add semantic guarantees, improving reliability and verifiability in MAS.
 
 \newpage
 \subsection{Justification of significance}
 \textbf{Goal}: Present my contribution to the field - how my research addresses these gaps and advance knowledge. \textbf{Strategy}: Magnitude + Urgency + Impact.
 
 \subparagraph{}
-Structured, semantically precise communication in multi-agent systems is increasingly critical as agentic AI applications scale across industries. Addressing the semantic gap in A2A offers:
+Structured, semantically precise communication in multi-agent systems is increasingly critical as agentic AI applications scale across industries.
 \subsubsection{Present evidence}
 \begin{itemize}
   \item Multi-agent LLM systems are proliferating (LangChain swarms, AutoGPT)
