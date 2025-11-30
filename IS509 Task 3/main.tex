@@ -53,14 +53,14 @@ style=ieee,
 \raggedright
 \section{Introduction}
 
-\subsection{Background/context}
+\subsection{Background and context}
 
 Goal: Establish research territory (broad academic landscape + demo knowledge of the field)\\
 \textbf{Strategy:} Relevant + credible sources + historical context with current issues + balance depth and breadth.
 
 
 
-\subsubsection{Broad context}
+\subsubsection{Broad context: Multi-agent systems with LLMs}
 \subparagraph{}
 The advancement of Large Language Models (LLMs) has ushered in 
 a new era of autonomous AI agents capable of performing complex tasks 
@@ -70,7 +70,7 @@ CrewAI, and Langchain to automate workflows and optimize decision-making \cite{S
 
 
 
-\subsubsection{Narrow focus}
+\subsubsection{Narrow focus: Agent-to-agent communication concepts and standards}
 \subparagraph{}
 However, current implementations of multi-agent systems predominantly rely on natural language processing (NLP) for inter-agent communication.
 Agent-to-agent communication through natural language introduces several challenges, including ambiguity, misinterpretation, and inefficiencies in task execution \cite{zhou2025ai}.
@@ -96,9 +96,14 @@ In contrast to OpenAI Agents SDK, which provides only local IPC semantics, and t
 It defines message envelopes, routing, agent metadata, capability discovery, and extensible JSON-based interaction primitives. A2A and MCP are considered as complementary standards \cite{A2A2025}.
 
 \newpage
-\subsubsection{Specific gap}
+\subsubsection{Specific gap: Semantic limitations of A2A protocol}
 \subparagraph{}
-Figure \ref{fig:semantic_gap} illustrates the communication landscape in multi-agent systems. Traditional formal protocols (FIPA-ACL, KQML) offered high semantic precision and verifiability but suffered from rigidity and poor adoption. Modern LLM-based agents communicate through natural language prompts and role assignments, providing flexibility and adaptability but introducing ambiguity and non-determinism. Current standards like A2A provide syntactic infrastructure (message envelopes, routing, discovery) but lack semantic guarantees, leaving a critical gap. Our research targets this gap by proposing a typed semantic layer that bridges formal verifiability with LLM flexibility.
+Figure \ref{fig:semantic_gap} illustrates the communication landscape in multi-agent systems. 
+Traditional formal protocols (FIPA-ACL, KQML) offered high semantic precision and verifiability. 
+But they suffered from inflexibility and poor industry adoption. 
+Modern LLM-based agents communicate through natural language prompts, planning steps, and role assignments. It provides adaptability, but also introduces ambiguity and non-determinism. 
+Current standards like A2A provide syntactic infrastructure (message envelopes, routing, discovery) but lack semantic guarantees, leaving a gap. 
+Our research targets this gap by proposing a typed semantic layer. This layer should bridge formal verification with LLM emergence behavior.
 
 \begin{figure}[h]
 \centering
@@ -151,7 +156,7 @@ A2A protocol provides a much-needed open standard for agent interoperability.
 However, A2A standardizes only the syntax of communication: message envelopes, routing, and discovery. Unlike FIPA-ACL and KQML, which defined performatives and semantic frameworks, A2A does not prescribe message semantics, ontologies, shared meaning representations, or reasoning-level guarantees.
 This semantic gap motivates research into typed, non-NLP communication layers that can enable more reliable, verifiable, and deterministic multi-agent behavior. We want to implement guarantees that agents understand each other beyond message structure.
 
-\subsubsection{Solution}
+\subsubsection{Solution: Typed semantic extension for A2A protocol}
 \subparagraph{}
 This research will develop a typed semantic extension for the A2A protocol that introduces formal performatives, interaction contracts, and verification constraints for multi-agent communication. 
 We will leverage A2A's built-in extension mechanism (A2A Specification \href{https://a2a-protocol.org/latest/specification/#46-extensions}{Section 4.6}) 
@@ -188,10 +193,10 @@ This gap raises critical questions: How can agents achieve deterministic communi
 
 \newpage
 \subsection{Justification of significance}
-\textbf{Goal}: Present my contribution to the field - how my research addresses these gaps and advance knowledge. \textbf{Strategy}: Magnitude + Urgency + Impact.
+\textbf{Goal}: Present my contribution to the field, show how my research addresses these gaps and advance knowledge. \textbf{Strategy}: Magnitude + Urgency + Impact.
 
 \subparagraph{}
-This research addresses a critical gap in the emerging standard for agent-to-agent communication at a pivotal moment in its adoption trajectory. 
+This research addresses a gap in the emerging standard for agent-to-agent communication. 
 A2A's explicit extension mechanism could provide a semi-standardized pathway for semantic enhancement, making this work potentially applicable to real-world deployments.
 
 \subsubsection{Magnitude: Industry momentum and standardization urgency}
