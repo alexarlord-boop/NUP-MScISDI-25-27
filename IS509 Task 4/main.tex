@@ -1,0 +1,115 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+
+\addbibresource{sample.bib} %Imports bibliography file
+
+\begin{document}
+
+% ---------------------------
+% Title page (custom)
+% ---------------------------
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[width=5cm]{nup_logo.png} \\[1cm]
+    {\Large Neapolis University Pafos} \\[0.5cm]
+
+    {\large \textbf{Course Code:} IS509} \\[2cm]
+
+    {\huge \textbf{Task 4: Research Questions and Hypotheses}} \\[1.5cm]
+
+    {\large \textbf{Name:} Aleksandr Petrunin} \\[0.3cm]
+    {\large \textbf{Student ID:} 1251114137} \\[2cm]
+
+    {\large \today}
+  \end{center}
+\end{titlepage}
+
+\section{Introduction (Task 3 recap)}
+In Task 3, we explored the Agent-to-Agent (A2A) communication framework, which facilitates interaction among autonomous agents in distributed systems. 
+A2A's extension mechanism allows agents to dynamically adapt their communication protocols based on context and requirements. 
+However, while A2A provides a flexible structure for agent interactions, it lacks a formal semantic layer that ensures deterministic communication and verifiable coordination among agents. 
+This gap presents challenges in scenarios where agents must reliably delegate tasks, negotiate roles, or coordinate actions without ambiguity.
+
+This gap raises critical questions: How can agents achieve deterministic communication within A2A's extension mechanism? What formal semantics are necessary for verifiable multi-agent coordination? Can a typed semantic layer maintain A2A's flexibility while enabling reliable task delegation and negotiation?
+
+
+\section{Research Questions and Hypotheses}
+
+\paragraph{Refined questions}
+\textbf{Goal:} Clarity + Feasibility + Relevance.\\
+\textbf{Strategy:} 
+\subparagraph{Attempt 1}
+\begin{enumerate}
+  \item How can agents achieve deterministic communication within A2A's extension mechanism?
+  \item What formal semantics are required  for verifiable multi-agent coordination?
+  \item Can a typed semantic layer be integrated into A2A without compromising its adaptability?
+\end{enumerate}
+
+\subparagraph{Attempt 2}
+\begin{enumerate}
+  \item How can LLM-based agents achieve deterministic communication within A2A's extension mechanism?
+  \item Will the integration of a typed semantic layer improve task delegation and negotiation among LLM-based agents?
+  \item What formal semantics are required  for verifiable and deterministic coordination of the LLM-based agents?
+  \item Can a typed semantic layer be integrated into A2A framework without compromising its adaptability?
+  \item Will the proposed semantic layer affect small and large scale MAS differently?
+  \item Will the proposed semantic layer affect MAS made of SLMs, LLMs, hybrid set differently?
+\end{enumerate}
+
+\subparagraph{Attempt 3}
+\begin{enumerate}
+  \item Will the integration of a typed semantic layer in A2A framework bring determinism into collaborative activities among LLM-based agents?
+  \item What formal semantics are necessary and sufficient for deterministic coordination of the LLM-based agents?
+  \item Will the proposed semantic layer affect various scale MAS (from 2 to 10 agents) differently?
+  \item Will the proposed semantic layer affect MAS made of different language model (small, foundation) types differently?
+\end{enumerate}
+
+
+\subsection{Topic1:}
+\subsubsection{Research Question:}
+\subsubsection{Hypothesis:}
+\subsubsection{Explanation}
+A short explanation (300–400 words) justifying how the questions/hypotheses align with
+your research purpose and methodology.
+\subsection{Topic2:}
+\subsubsection{Research Question:}
+\subsubsection{Hypothesis:}
+\subsubsection{Explanation}
+A short explanation (300–400 words) justifying how the questions/hypotheses align with
+your research purpose and methodology.
+\subsection{Topic3:}
+\subsubsection{Research Question:}
+\subsubsection{Hypothesis:}
+\subsubsection{Explanation}
+A short explanation (300–400 words) justifying how the questions/hypotheses align with
+your research purpose and methodology.
+
+
+
+
+
+
+
+\newpage
+\printbibliography
+\nocite{*}
+
+\end{document}
