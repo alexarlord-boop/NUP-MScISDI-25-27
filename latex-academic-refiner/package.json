@@ -1,0 +1,25 @@
+{
+  "name": "latex-academic-refiner",
+  "displayName": "latex-academic-refiner",
+  "description": "Highlights vague or insufficient academic language in .tex files.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "academtex",
+      "aliases": ["LaTex Academic Refiner", "academtex"],
+      "extensions": [".tex"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "academtex",
+      "scopeName": "source.tex",
+      "path": "./syntaxes/academtex.tmLanguage.json"
+    }]
+  }
+}
