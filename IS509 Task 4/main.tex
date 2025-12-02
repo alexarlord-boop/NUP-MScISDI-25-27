@@ -66,39 +66,70 @@ This gap raises critical questions: How can agents achieve deterministic communi
 
 \subparagraph{Attempt 2}
 \begin{enumerate}
-  \item How can LLM-based agents achieve deterministic communication within A2A's extension mechanism?
+  \item How can LLM-based agents achieve \textcolor{red}{deterministic} communication within A2A's extension mechanism?
   \item Will the integration of a typed semantic layer improve task delegation and negotiation among LLM-based agents?
-  \item What formal semantics are required  for verifiable and deterministic coordination of the LLM-based agents?
-  \item Can a typed semantic layer be integrated into A2A framework without compromising its adaptability?
-  \item Will the proposed semantic layer affect small and large scale MAS differently?
-  \item Will the proposed semantic layer affect MAS made of SLMs, LLMs, hybrid set differently?
+  \item What \textcolor{red}{formal semantics} are required  for \textcolor{red}{verifiable and deterministic coordination} of the LLM-based agents?
+  \item Can a typed semantic layer be integrated into A2A framework without \textcolor{red}{compromising its adaptability}?
+  \item Will the proposed semantic layer affect small and large scale MAS \textcolor{red}{differently}?
+  \item Will the proposed semantic layer affect MAS made of SLMs, LLMs, hybrid set \textcolor{red}{differently}?
 \end{enumerate}
 
-\subparagraph{Attempt 3}
+\subparagraph{Attempt 3-5}
 \begin{enumerate}
-  \item Will the integration of a typed semantic layer in A2A framework bring determinism into collaborative activities among LLM-based agents?
-  \item What formal semantics are necessary and sufficient for deterministic coordination of the LLM-based agents?
-  \item Will the proposed semantic layer affect various scale MAS (from 2 to 10 agents) differently?
-  \item Will the proposed semantic layer affect MAS made of different language model (small, foundation) types differently?
+  \item [Does it work?](Casual) To what extent does integration of a typed semantic layer in A2A bring determinism (measured by task completion consistency) in collaborative activities among LLM-based agents compared to standard A2A?
+  \item [Why does it work?](Descriptive) What formal semantic constructs (e.g., type systems, truth conditions, predicates) are required to achieve deterministic task delegation and role negotiation in LLM-based multi-agent systems?
+  \item [When does it work?](Comparative/relational) How does coordination overhead and task completion accuracy of the typed semantic layer scale with MAS size (2, 5, and 10 agents) in the A2A framework?
+  \item [For whom does it work?](Comparative/relational) Does the effectiveness of the typed semantic layer differ between MAS using small language models ($<$7B parameters) versus foundation models ($>$70B parameters) in terms of protocol adherence and negotiation success rates?
 \end{enumerate}
 
 
-\subsection{Topic1:}
-\subsubsection{Research Question:}
-\subsubsection{Hypothesis:}
-\subsubsection{Explanation}
+\subsection{Topic1: Does it work?}
+\paragraph{Research Question:} To what extent does integration of a typed semantic layer in A2A bring determinism (measured by task completion consistency) in collaborative activities among LLM-based agents compared to standard A2A?
+\paragraph{Hypothesis:} The integration of a typed semantic layer in A2A will enhance determinism in collaborative activities among LLM-based agents, leading to higher task completion consistency (at least 15\% increase) compared to standard A2A without a semantic layer.
+\paragraph{IV:} Integration of a typed semantic layer in A2A (with vs. without).
+\paragraph{DV:} Task completion consistency (measured by the percentage of successful task completions across multiple trials).
+\paragraph{Explanation:} If we get a 15\% or more increase in task completions on some random MAS setup, it indicates that the typed semantics might actually help agents interpret and execute tasks more reliably. 
+This would provide evidence to support the alternative hypothesis that a formal semantic layer enhances determinism in multi-agent collaborations.
+This evidence would allow to further explore the specific semantic constructs that contribute to this improvement, guiding future enhancements to the A2A framework.
+\textbf{Alternatively}, if no improvement is observed, it would suggest that other factors may be more critical in achieving deterministic communication among LLM-based agents. In this case we rethink out approach.
+
+\newpage
+\subsection{Topic2: Why does it work?}
+\paragraph{Research Question:} What formal semantic constructs (e.g., type systems, truth conditions, predicates) are required to achieve deterministic task delegation and role negotiation in LLM-based multi-agent systems?
+\paragraph{Hypothesis:} Deterministic task delegation and role negotiation in LLM-based multi-agent systems emerge when agents share a typed interaction protocol—comprising (1) a shared ontology of task types, (2) well-formed truth-conditional commitments, and (3) role-dependent inference rules—allowing messages to be parsed into unambiguous semantic actions.
+\paragraph{IV:} The degree of semantic formalization in the agent communication protocol.
+\begin{enumerate}
+  \item Presence/absence of type annotations on messages
+  \item Presence/absence of role predicates
+  \item Presence/absence of truth-conditional constraints
+  \item Level of ontology structure (none → flat → hierarchical)
+\end{enumerate}
+\paragraph{DV:} Determinism of delegation and negotiation outcomes. Measured by:
+\begin{enumerate}
+  \item Variance in task-assignment decisions across runs
+  \item Success rate of resolving role conflicts
+  \item Number of negotiation cycles required
+  \item Agreement consistency across agents
+\end{enumerate}
+\paragraph{Explanation:} The study investigates whether LLM agents achieve more predictable coordination when their communication is constrained by explicit semantic formalisms. Without such constraints, agents rely on natural-language inference, which introduces ambiguity and stochastic interpretation. By adding elements such as type systems, role predicates, and truth-conditional commitments, agent messages become machine-interpretable semantic acts rather than free-form text. If determinism increases with stronger semantic structure, it would support the hypothesis that LLM-multi-agent systems require lightweight formal semantics to achieve reliable delegation and negotiation.
+
+\newpage
+\subsection{Topic3: When does it work?}
+\paragraph{Research Question:}
+\paragraph{Hypothesis:}
+\paragraph{IV:}
+\paragraph{DV:}
+\paragraph{Explanation}
 A short explanation (300–400 words) justifying how the questions/hypotheses align with
 your research purpose and methodology.
-\subsection{Topic2:}
-\subsubsection{Research Question:}
-\subsubsection{Hypothesis:}
-\subsubsection{Explanation}
-A short explanation (300–400 words) justifying how the questions/hypotheses align with
-your research purpose and methodology.
-\subsection{Topic3:}
-\subsubsection{Research Question:}
-\subsubsection{Hypothesis:}
-\subsubsection{Explanation}
+
+\newpage
+\subsection{Topic4: For whom does it work?}
+\paragraph{Research Question:}
+\paragraph{Hypothesis:}
+\paragraph{IV:}
+\paragraph{DV:}
+\paragraph{Explanation}
 A short explanation (300–400 words) justifying how the questions/hypotheses align with
 your research purpose and methodology.
 
