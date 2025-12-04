@@ -1,0 +1,48 @@
+% Qualitative Coding Template
+% Configurable column widths
+\newlength{\LinePosition}
+\newlength{\mainTextWidth}
+\newlength{\codesWidth}
+\newlength{\columnGap}
+
+\setlength{\mainTextWidth}{0.70\textwidth}
+\setlength{\LinePosition}{0.75\textwidth}
+\setlength{\codesWidth}{0.25\textwidth}
+\setlength{\columnGap}{0.05\textwidth}
+
+% Usage: \codingSection{label}{interviewer_text}{participant_text}{codes}{notes}
+\newcommand{\codingSection}[5]{
+\paragraph{#1}
+\noindent\begin{minipage}[t]{\mainTextWidth}
+\subparagraph{Interviewer:} #2
+\\
+\subparagraph{Participant:} #3
+\end{minipage}%
+\hspace{\columnGap}%
+\begin{minipage}[t]{\codesWidth}
+\small
+#4
+\vspace{0.3cm}
+\textit{Notes: #5}
+\end{minipage}
+
+\vspace{0.5cm}
+}
+
+% Header for coding section
+\newcommand{\codingHeader}{
+\vspace{0.4cm}
+\noindent\begin{minipage}[t]{\LinePosition}
+\textbf{Interview Transcript}
+\end{minipage}%
+\hspace{0.02\textwidth}%
+\begin{tikzpicture}[remember picture, overlay]
+\draw[thick, gray] (0,0) -- (0,-\textheight+2cm);
+\end{tikzpicture}%
+\hspace{0.01\textwidth}%
+\begin{minipage}[t]{\codesWidth}
+\textbf{Codes \& Remarks}
+\end{minipage}
+
+\vspace{0.5cm}
+}

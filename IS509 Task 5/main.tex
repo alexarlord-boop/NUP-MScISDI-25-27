@@ -1,0 +1,140 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% Add these packages for the coding layout
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+
+\addbibresource{sample.bib} %Imports bibliography file
+
+% Import coding template
+\input{coding_template.tex}
+
+\begin{document}
+
+% ---------------------------
+% Title page (custom)
+% ---------------------------
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[width=5cm]{nup_logo.png} \\[1cm]
+    {\Large Neapolis University Pafos} \\[0.5cm]
+
+    \begin{tabular}{@{}l@{}}
+      {\large \textbf{Course Code:} IS509} \\[0.2cm]
+      {\large \textbf{Course Title:} Research Methodology} \\[0.2cm]
+      {\large \textbf{Audience Instructor:} Marios Touloupos}
+    \end{tabular} \\[2cm]
+
+    {\huge \textbf{Task 5: Analysis and Interpretation of Qualitative Data}} \\[1.5cm]
+
+     \begin{tabular}{@{}l@{}}
+      {\large \textbf{Name:} Aleksandr Petrunin} \\[0.3cm]
+      {\large \textbf{Student ID:} 1251114137}
+    \end{tabular} \\[2cm]
+
+    {\large \today}
+  \end{center}
+\end{titlepage}
+
+
+
+\section{Introduction: interview}
+
+\paragraph{Interview topic:} Remote Work Experience During the Pandemic.
+
+\paragraph{A)}
+\subparagraph{Interviewer:} Can you describe how your work life changed when you started working from home
+during the pandemic?
+\subparagraph{Participant:} At first, it was honestly very strange. I missed the routine of going to the office,
+getting coffee with colleagues, just... having that buzz around me. But over time, I started to
+appreciate the flexibility. I could start earlier, take short breaks when needed, and it made
+balancing family life much easier.
+
+\paragraph{B)}
+\subparagraph{Interviewer:} What aspects did you find most challenging?
+\subparagraph{Participant:} The main challenge was staying focused. There were so many distractions — kids,
+household chores, even just the temptation to relax. Also, communication with my team became
+harder. We used video calls, but it wasn’t the same. Sometimes misunderstandings happened
+because we couldn’t read each other’s body language.
+
+
+\paragraph{C)}
+\subparagraph{Interviewer:} How did your organization support you during that period?
+\subparagraph{Participant:} They tried. We had weekly check-ins, and our manager encouraged us to take
+mental health days. But I think they underestimated how exhausting constant online meetings
+could be. I often felt drained by the end of the day.
+
+
+\paragraph{D)}
+\subparagraph{Interviewer:} Looking back, do you think remote work had more positive or negative effects
+overall?
+\subparagraph{Participant:} Hmm, I’d say mixed. Personally, it gave me more control over my schedule and
+reduced stress from commuting. But socially, it made me feel isolated. I missed the informal
+chats — that’s where a lot of creativity and problem-solving used to happen.
+
+
+\paragraph{E)}
+\subparagraph{Interviewer:} Would you prefer to continue working remotely in the future?
+\subparagraph{Participant:} Probably a hybrid model. I think a few days at home and a few at the office would be
+ideal. It keeps the flexibility but still allows that human connection.
+
+
+\newpage
+\section{Practicing qualitative coding}
+
+\subsection{Conduct initial open coding.}
+
+\paragraph{Interview topic:} Remote Work Experience During the Pandemic.
+
+\codingHeader
+
+\codingSection{A)}{Can you describe how your work life changed when you started working from home during the pandemic?}{At first, it was honestly very strange. I missed the routine of going to the office, getting coffee with colleagues, just... having that buzz around me. But over time, I started to appreciate the flexibility. I could start earlier, take short breaks when needed, and it made balancing family life much easier.}{\textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\}{...}
+
+\codingSection{B)}{What aspects did you find most challenging?}{The main challenge was staying focused. There were so many distractions — kids, household chores, even just the temptation to relax. Also, communication with my team became harder. We used video calls, but it wasn't the same. Sometimes misunderstandings happened because we couldn't read each other's body language.}{\textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\}{...}
+
+\codingSection{C)}{How did your organization support you during that period?}{They tried. We had weekly check-ins, and our manager encouraged us to take mental health days. But I think they underestimated how exhausting constant online meetings could be. I often felt drained by the end of the day.}{\textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\}{...}
+
+\codingSection{D)}{Looking back, do you think remote work had more positive or negative effects overall?}{Hmm, I'd say mixed. Personally, it gave me more control over my schedule and reduced stress from commuting. But socially, it made me feel isolated. I missed the informal chats — that's where a lot of creativity and problem-solving used to happen.}{\textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\}{...}
+
+\codingSection{E)}{Would you prefer to continue working remotely in the future?}{Probably a hybrid model. I think a few days at home and a few at the office would be ideal. It keeps the flexibility but still allows that human connection.}{\textcolor{blue}{[Code here]}\\ \textcolor{blue}{[Code here]}\\}{...}
+
+
+\newpage
+\subsection{Identify at least 3 emerging themes.}
+
+\newpage
+\subsection{Report}
+Write a short report (600–800 words) explaining how you coded the data, how you
+derived themes, and what insights they suggest.
+
+
+
+
+
+
+\newpage
+\printbibliography
+\nocite{*}
+
+\end{document}
