@@ -115,27 +115,94 @@ This evidence would allow to further explore the specific semantic constructs th
 
 \newpage
 \subsection{Topic3: When does it work?}
-\paragraph{Research Question:}
-\paragraph{Hypothesis:}
-\paragraph{IV:}
-\paragraph{DV:}
-\paragraph{Explanation}
-A short explanation (300–400 words) justifying how the questions/hypotheses align with
-your research purpose and methodology.
+\paragraph{Research Question:} How does coordination overhead and task completion accuracy of the typed semantic layer scale with MAS size (2, 5, and 10 agents) in the A2A framework?
+\paragraph{Hypothesis:} As the number of agents in the MAS increases, the coordination overhead introduced by the typed semantic layer will grow sub-linearly, while task completion accuracy will improve up to a certain threshold (e.g., 5 agents), after which it will plateau or slightly decline due to increased communication complexity.
+\paragraph{IV:} Number of agents in the MAS (2, 5, and 10).
+\paragraph{DV:} Coordination overhead and task completion accuracy.
+\paragraph{Explanation:} By varying the number of agents in the MAS, we can observe how the typed semantic layer affects efficiency and effectiveness of agent coordination. 
+Coordination overhead can be measured by metrics such as message volume, latency, and processing time. 
+Task completion accuracy can be assessed by the percentage of successfully completed tasks. 
+If the hypothesis holds true, it would suggest that the typed semantic layer is effective in managing communication complexity up to a certain point, beyond which additional agents may introduce diminishing returns due to increased interaction complexity. 
+This insight would inform the scalability limits of the proposed semantic layer within the A2A framework.
 
 \newpage
 \subsection{Topic4: For whom does it work?}
-\paragraph{Research Question:}
-\paragraph{Hypothesis:}
-\paragraph{IV:}
-\paragraph{DV:}
-\paragraph{Explanation}
-A short explanation (300–400 words) justifying how the questions/hypotheses align with
-your research purpose and methodology.
+\paragraph{Research Question:} Does the effectiveness of the typed semantic layer differ between MAS using small language models ($<$7B parameters) versus foundation models ($>$70B parameters) in terms of protocol adherence and negotiation success rates?
+\paragraph{Hypothesis:} The typed semantic layer will yield greater improvements in protocol adherence and negotiation success rates for MAS using small language models compared to those using foundation models, due to the limited inherent language understanding capabilities of smaller models.
+\paragraph{IV:} Model size category (small language models $<$7B parameters, foundation models $>$70B parameters).
+\paragraph{DV:} Protocol adherence and negotiation success rates.
+\paragraph{Explanation:} By comparing MAS composed of small language models versus foundation models, we can assess how model capabilities influence the effectiveness of the typed semantic layer.
+Small models may struggle with natural language nuances, making them more reliant on structured semantics for accurate communication. 
+In contrast, foundation models possess advanced language understanding, potentially reducing their dependence on formal semantics.
+If the hypothesis is confirmed, it would indicate that the typed semantic layer is particularly beneficial for enhancing communication reliability in MAS with limited language models, guiding future design considerations for multi-agent systems based on model capabilities.
 
 
+\newpage
+\subsection{Methodology}
+To test these hypotheses, we will implement the typed semantic layer within the A2A framework and conduct a series of experiments varying the independent variables as outlined above.
+We will measure the dependent variables using quantitative metrics such as task completion consistency, negotiation success rates, and coordination overhead.
+Statistical analysis will be performed to evaluate the significance of observed effects and validate the hypotheses.
 
 
+\subsubsection{Experimental Design}
+The study will employ a mixed-methods approach combining quantitative experiments and qualitative analysis:
+\begin{itemize}
+  \item \textbf{Factorial design} to test interactions between semantic formalization levels and agent configurations
+  \item \textbf{Repeated measures} (minimum 30 trials per condition) to account for LLM stochasticity
+  \item \textbf{Baseline comparison} against standard A2A without semantic layer
+  \item \textbf{Control variables}: task complexity, domain knowledge, message frequency
+\end{itemize}
+
+\subsubsection{Implementation}
+\begin{itemize}
+  \item Development of typed semantic layer prototype extending A2A's extension mechanism
+  \item Integration with existing LLM inference frameworks (e.g., LangChain, AutoGen)
+  \item Creation of benchmark task suites covering delegation, negotiation, and coordination scenarios
+  \item Implementation of logging and monitoring infrastructure for all agent interactions
+\end{itemize}
+
+\subsubsection{Data Collection}
+Quantitative metrics will include:
+\begin{itemize}
+  \item Task completion consistency (success rate across trials)
+  \item Protocol adherence score (percentage of messages following typed schema)
+  \item Negotiation success rates and cycle counts
+  \item Message volume, latency, and processing time
+  \item Agreement consistency (inter-agent alignment on decisions)
+\end{itemize}
+
+Qualitative data will capture:
+\begin{itemize}
+  \item Agent conversation logs for failure analysis
+  \item Semantic ambiguity instances
+  \item Edge cases where formal semantics break down
+\end{itemize}
+
+\subsubsection{Statistical Analysis}
+\begin{itemize}
+  \item ANOVA or Kruskal-Wallis tests for comparing conditions
+  \item Post-hoc pairwise comparisons with Bonferroni correction
+  \item Effect size calculations (Cohen's d) to assess practical significance
+  \item Regression analysis for scaling behavior (Topic 3)
+  \item Significance threshold: $\alpha = 0.05$
+\end{itemize}
+
+\subsubsection{Validation}
+\begin{itemize}
+  \item Cross-validation across different task domains
+  \item Ablation studies to isolate contributions of individual semantic constructs
+  \item Comparison with existing multi-agent coordination frameworks
+  \item Reproducibility measures: fixed random seeds, version-controlled code, documented hyperparameters
+\end{itemize}
+
+\subsubsection{Additional considerations}
+\begin{itemize}
+  \item Participant models: Specify which LLM models we will use (e.g., GPT-4, Claude, Llama variants)
+  \item Ethical considerations: Address potential biases in LLM behavior
+  \item Timeline: Estimated duration for each experimental phase
+  \item Limitations: Acknowledge constraints (computational resources, generalizability)
+  \item Tools and infrastructure: Specific frameworks, hardware requirements, cloud services
+\end{itemize}
 
 
 
