@@ -10,12 +10,14 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
+\usepackage{csquotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{booktabs}
@@ -399,7 +401,106 @@ TerraSync AI is a multimodal AI-powered digital twin platform that creates real-
 
 \subsection{Business Model Canvas}
 
-\textit{[Placeholder: Insert full Business Model Canvas diagram - consider creating a visual using TikZ or inserting an image]}
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[
+    box/.style={rectangle, draw, thick, text width=3.2cm, minimum height=4cm, align=left, font=\small},
+    tallbox/.style={rectangle, draw, thick, text width=3.2cm, minimum height=8.2cm, align=left, font=\small},
+    widebox/.style={rectangle, draw, thick, text width=6.6cm, minimum height=4cm, align=left, font=\small},
+    title/.style={font=\bfseries\small},
+]
+
+% Row 1 - Top boxes
+\node[box, fill=blue!10] (kp) at (0,0.3) {
+    \textbf{Key Partners}\\[0.2cm]
+    • Data providers\\
+    • Cloud platforms\\
+    • EIB/EU funds\\
+    • System integrators\\
+    • Academic partners\\
+    • Industry associations
+};
+
+\node[box, fill=green!10] (ka) at (3.5,0) {
+    \textbf{Key Activities}\\[0.2cm]
+    • Platform development\\
+    • Data integration\\
+    • AI model training\\
+    • Pilot implementations\\
+    • Sales \& BD\\
+    • Compliance mgmt
+};
+
+\node[box, fill=yellow!10] (vp) at (7,0) {
+    \textbf{Value Propositions}\\[0.2cm]
+    • Fast deployment\\
+    • 60-80\% cost savings\\
+    • Territory-wide scope\\
+    • Real-time insights\\
+    • EU compliance\\
+    • Scalable solution
+};
+
+\node[box, fill=orange!10] (cr) at (10.5,0) {
+    \textbf{Customer Relations}\\[0.2cm]
+    • Dedicated account mgmt\\
+    • Co-creation pilots\\
+    • Training \& 24/7 support\\
+    • User community\\
+    • Long-term partnerships
+};
+
+\node[box, fill=red!10] (cs) at (14,0.2) {
+    \textbf{Customer Segments}\\[0.2cm]
+    \textbf{Primary:}\\
+    • EU gov ministries\\
+    • 15 countries\\[0.1cm]
+    \textbf{Secondary:}\\
+    • Construction firms\\
+    • €50M+ projects
+};
+
+% Row 2 - Bottom boxes
+\node[box, fill=green!10, below=0.6cm of ka] (kr) {
+    \textbf{Key Resources}\\[0.2cm]
+    • Cloud infrastructure\\
+    • n8n workflows\\
+    • AI models\\
+    • Domain experts\\
+    • Seed funding
+};
+
+\node[box, fill=orange!10, below=0.6cm of cr] (ch) {
+    \textbf{Channels}\\[0.2cm]
+    • Direct gov sales\\
+    • EU partnerships\\
+    • System integrators\\
+    • Industry events\\
+    • Digital marketing
+};
+
+% Row 3 - Wide bottom boxes
+\node[widebox, fill=purple!10, below=6.0cm of kp.south west, anchor=north west] (cost) {
+    \textbf{Cost Structure}\\[0.2cm]
+    \textbf{Fixed:} Team (€30K/mo), Cloud (€5K/mo), Data licenses (€10K/mo), Admin (€5K/mo)\\
+    \textbf{Variable:} Implementation (€20-40K), Sales (15-20\% revenue), Custom dev (€10-30K)\\
+    \textbf{Drivers:} Data licensing, cloud scaling, talent, long sales cycles
+};
+
+\node[widebox, fill=teal!10, below=6.0cm of cs.south east, anchor=north east] (revenue) {
+    \textbf{Revenue Streams}\\[0.2cm]
+    • SaaS Licensing (€20-50K/mo) - 60\%\\
+    • Implementation (€100-300K) - 25\%\\
+    • Custom Integration (€50-150K) - 10\%\\
+    • Analytics Services (€30-80K)\\
+    • Support \& Training (€10-25K/yr) - 5\%
+};
+
+\end{tikzpicture}
+}
+\caption{TerraSync AI Business Model Canvas}
+\end{figure}
 
 \subsubsection{Customer Segments}
 \textbf{Primary Segment:} EU Government Ministries
