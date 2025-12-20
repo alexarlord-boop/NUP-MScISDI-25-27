@@ -1,0 +1,102 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+
+\addbibresource{sample.bib} %Imports bibliography file
+
+\begin{document}
+
+% ---------------------------
+% Title page (custom)
+% ---------------------------
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[width=5cm]{nup_logo.png} \\[1cm]
+    {\Large Neapolis University Pafos} \\[0.5cm]
+
+    \begin{tabular}{@{}l@{}}
+      {\large \textbf{Course Code:} IS507} \\[0.2cm]
+      {\large \textbf{Course Title:} Disruptive Technologies} \\[0.2cm]
+      {\large \textbf{Audience Instructor:} Georgios Sklias}
+    \end{tabular} \\[2cm]
+
+    {\huge \textbf{A complete concept proposal for an EU-funded project}} \\[1.5cm]
+
+     \begin{tabular}{@{}l@{}}
+      {\large \textbf{Name:} Aleksandr Petrunin} \\[0.3cm]
+      {\large \textbf{Student ID:} 1251114137}
+    \end{tabular} \\[2cm]
+
+    {\large \today}
+  \end{center}
+\end{titlepage}
+
+\tableofcontents
+\vspace{5cm}
+
+\begin{abstract}
+A concise overview of the project (max. 250 words), including the call for
+proposals selected (can be either past, ongoing or upcoming call).
+\end{abstract}  
+
+\newpage
+\section{Context and rationale}
+\subsection{Background and problem definition}
+\subsection{Relevance to EU policy priorities}
+\subsection{Evidence of need (supported by references and data)}
+
+\newpage
+\section{Objectives and expected outcomes}
+\subsection{General and specific objectives}
+\subsection{Anticipated impacts and beneficiaries}
+
+\newpage
+\section{Work plan and methodology}
+\subsection{Work packages, tasks, and deliverables}
+\subsection{Timeline (Gantt chart)}
+\subsection{Risk management plan}
+
+\newpage
+\section{Partnership formation}
+\subsection{Description of consortium partners and their roles}
+\subsection{Governance and communication plan}
+
+\newpage
+\section{Budget and resources}
+\subsection{Estimated cost breakdown (e.g., staff, travel, equipment,
+subcontracting)}
+\subsection{Funding requested from EU vs. co-financing}
+
+\newpage
+\section{Dissemination, communication, and exploitation plan}
+\subsection{How project results will be shared and sustained}
+
+
+
+
+
+
+
+\newpage
+\printbibliography
+\nocite{*}
+
+\end{document}
