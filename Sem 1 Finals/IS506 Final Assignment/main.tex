@@ -17,7 +17,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{positioning,shadows}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{booktabs}
@@ -297,23 +297,66 @@ Customer Satisfaction Score (1-10) & -- & 7.0 & 8.5 & 9.0 \\
 \begin{tabular}{@{}p{0.15\textwidth}p{0.2\textwidth}p{0.25\textwidth}p{0.25\textwidth}@{}}
 \toprule
 \textbf{Competitor} & \textbf{Offering} & \textbf{Strengths} & \textbf{Weaknesses} \\ \midrule
-Bentley Systems & iTwin platform for infrastructure & Established brand, BIM integration & Project-focused, not territory-wide \\
-Siemens & MindSphere digital twin & Industrial IoT expertise & Complex, expensive \\
-Autodesk & Construction Cloud & Design tool integration & Limited predictive analytics \\
-Dassault Systèmes & 3DEXPERIENCE & Simulation capabilities & High cost, steep learning curve \\ \bottomrule
+\href{https://www.bentley.com/}{Bentley Systems} & iTwin platform & Established brand, BIM integration & Project-focused, not territory-wide \\
+\href{https://insights-hub.siemens.com/}{Siemens} & MindSphere (Insights Hub) & Industrial IoT expertise & Complex, expensive, steep learning curve \\
+\href{https://construction.autodesk.com/}{Autodesk} & Construction Cloud & Design tool integration & Limited predictive analytics, vendor lock-in \\
+\href{https://www.3ds.com/3dexperience}{Dassault Systèmes} & 3DEXPERIENCE & Simulation capabilities & High cost, requires specialized expertise \\
+\href{https://qgis.org}{QGIS} / \href{https://www.blender.org}{Blender} & Open Source Tools & Free, flexible, community-driven & Fragmented workflows, requires manual integration \\ \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Our Differentiation:}
+\textbf{Our Differentiation Strategy: The "Open Integrator" Advantage}
+
+Unlike established competitors who build "walled gardens" optimized for their proprietary data formats, TerraSync positions itself as a vendor-agnostic orchestration layer.
 \begin{itemize}
-    \item \textbf{Territory-wide scope} vs. project-specific
-    \item \textbf{Orchestration approach} vs. monolithic platforms
-    \item \textbf{Fast deployment} (weeks vs. years)
-    \item \textbf{Cost-effective} (fraction of custom builds)
-    \item \textbf{Open architecture} enabling rapid integration
+    \item \textbf{Data Sovereignty \& Self-Hosting:} We offer full on-premise or private cloud deployment options, addressing the strict data residency requirements of government clients that SaaS-only competitors often fail to meet.
+    \item \textbf{Modular Extensibility:} Rather than relying on a fixed menu of integrations, our architecture allows local IT teams and the open-source community to build custom data adapters for legacy or niche government systems.
+    \item \textbf{Vendor-Agnostic Aggregation:} We do not prioritize any specific CAD/BIM format. TerraSync acts as a neutral "glue" layer, visualizing data from Autodesk, Siemens, and local Excel sheets side-by-side without forcing data migration.
+    \item \textbf{Cost Structure Alignment:} By leveraging existing open-source tools for the core, our pricing model is based on value (territory coverage) rather than user seats, aligning better with public sector budget structures.
 \end{itemize}
 
-\textit{[Placeholder: Add competitive positioning matrix visualization]}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9, transform shape]
+    % Define coordinates
+    \coordinate (O) at (0,0);
+    \coordinate (X) at (12,0);
+    \coordinate (Y) at (0,8);
+
+    % Background quadrants
+    \fill[red!5] (0,0) rectangle (6,4);
+    \fill[orange!5] (0,4) rectangle (6,8);
+    \fill[orange!5] (6,0) rectangle (12,4);
+    \fill[green!5] (6,4) rectangle (12,8);
+
+    % Draw Axes
+    \draw[->, thick] (O) -- (X) node[right] {\textbf{Openness \& Interoperability}};
+    \draw[->, thick] (O) -- (Y) node[above] {\textbf{Strategic Scope}};
+
+    % Axis descriptions
+    \node[below=0.2cm, font=\small\itshape] at (6,0) {Proprietary / Walled Garden $\longrightarrow$ Vendor-Agnostic / Open Source};
+    \node[rotate=90, above=0.2cm, font=\small\itshape] at (0,4) {Single Asset / Project $\longrightarrow$ Territory / Ecosystem};
+
+    % Competitor Nodes
+    \node[circle, fill=gray!30, draw=gray!80, align=center, font=\small, minimum size=1.8cm, opacity=0.9] at (2.5, 2.5) {Autodesk\\(Construction)};
+    \node[circle, fill=gray!30, draw=gray!80, align=center, font=\small, minimum size=1.8cm, opacity=0.9] at (4.0, 3.5) {Bentley\\(Infra)};
+    \node[circle, fill=gray!30, draw=gray!80, align=center, font=\small, minimum size=1.8cm, opacity=0.9] at (2.0, 6.0) {Siemens\\(Industrial)};
+    \node[circle, fill=gray!30, draw=gray!80, align=center, font=\small, minimum size=1.8cm, opacity=0.9] at (9.5, 2.5) {QGIS /\\Blender};
+    \node[circle, fill=gray!30, draw=gray!80, align=center, font=\small, minimum size=1.8cm, opacity=0.9] at (1.5, 4.5) {Dassault\\(Simulation)};
+
+    % TerraSync Node
+    \node[circle, fill=blue!20, draw=blue!80, ultra thick, align=center, font=\bfseries, minimum size=2.5cm, drop shadow] at (9.5, 7.0) {TerraSync};
+
+    % Quadrant Labels
+    \node[font=\bfseries\small, gray] at (3, 7.5) {Enterprise Suites};
+    \node[font=\bfseries\small, gray] at (3, 0.5) {Legacy Tools};
+    \node[font=\bfseries\small, gray] at (9, 0.5) {Niche Open Tools};
+    \node[font=\bfseries\small, blue!80!black] at (9, 7.5) {Open Ecosystems};
+
+\end{tikzpicture}
+\caption{Competitive Positioning Matrix: TerraSync occupies the high-value "Open Ecosystem" quadrant, differentiating from legacy "walled gardens".}
+\label{fig:comp_matrix}
+\end{figure}
 
 \newpage
 
