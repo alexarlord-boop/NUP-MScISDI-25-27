@@ -456,6 +456,102 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
 \end{itemize}
 \textbf{Outcome:} Reduced truck idle time by 15\% and lowered port carbon emissions (Green Deal alignment).
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape, font=\sffamily]
+    % Main Window
+    \draw[fill=gray!5, drop shadow] (0,0) rectangle (16,10);
+    \node[anchor=north west, text=gray] at (0.2,9.8) {TerraSync v1.0 - Operational View};
+
+    % Sidebar
+    \fill[blue!90!black] (0,0) rectangle (1,9.2);
+
+\begin{figure}[H]
+\centering d
+\begin{tikzpicture}[scale=0.9, transform shape, font=\sffamily]
+    % Background: Terrain Map
+    \fill[green!10] (0,0) rectangle (14,6);
+    \draw[gray!40, dashed] (7,0) -- (7,6); % Border
+    \node[rotate=90, gray, font=\bfseries] at (6.8, 3) {BORDER};
+    
+    \node[font=\bfseries\large, gray] at (3.5, 5.5) {Country A (Montenegro)};
+    \node[font=\bfseries\large, gray] at (10.5, 5.5) {Country B (Albania)};
+
+    % Proposed Route
+    \draw[orange, line width=0.2cm] (1,1) to[out=30,in=200] (5,3) to[out=20,in=180] (9,2) to[out=0,in=150] (13,4);
+    \node[orange!80!black, font=\bfseries] at (2, 1.5) {Proposed Highway};
+
+    % Protected Zone (Conflict)
+    \fill[green!40, opacity=0.6] (6, 1.5) circle (1.5);
+    \node[green!30!black, font=\bfseries, align=center] at (6, 1.5) {Protected\\Nature Zone};
+    \node[red, font=\bfseries] at (6, 2.5) {CONFLICT DETECTED};
+    \draw[red, thick, ->] (6, 2.3) -- (6, 1.8);
+
+    % Blender View Insert (Decision Theater)
+    \draw[fill=white, drop shadow, thick] (8, 3.5) rectangle (13.5, 5.8);
+    \node[anchor=north west, font=\bfseries\small] at (8.1, 5.7) {Blender "Decision Theater" View};
+    % 3D Mockup inside
+    \fill[cyan!20] (8.2, 3.7) rectangle (13.3, 5.3); % Sky
+    \fill[green!30] (8.2, 3.7) -- (9, 4.5) -- (10, 4) -- (11, 4.8) -- (12, 4.2) -- (13.3, 3.7) -- cycle; % Mountains
+    \draw[gray!80, line width=0.1cm] (8.5, 3.7) to[out=45,in=220] (13, 4.5); % Road in 3D
+    \node[font=\tiny, align=center] at (10.5, 5.0) {Visual Impact Simulation:\\Route Option B (Tunnel)};
+
+    % Data Sources
+    \node[draw, fill=white, rounded corners] at (2, 4.5) {GIS Data A};
+    \node[draw, fill=white, rounded corners] at (12, 1) {GIS Data B};
+    \draw[->, dashed] (2, 4.2) -- (4, 3);
+    \draw[->, dashed] (12, 1.3) -- (10, 2);
+
+\end{tikzpicture}
+\caption{Use Case 2 Visualization: Cross-Border Strategic Planning. The platform integrates disparate GIS data from two nations (background) and uses Blender (inset) to visualize environmental conflicts and simulate alternative routes for stakeholder consensus.}
+\label{fig:balkan_corridor}
+\end{figure}
+    \foreach \y in {8,7,6,5} \fill[white, opacity=0.5] (0.2,\y) rectangle (0.8,\y+0.6);
+
+    % Top Bar
+    \fill[white] (1,8.5) rectangle (16,9.2);
+    \node[anchor=west] at (1.2, 8.85) {\textbf{Limassol Port Authority} | Live Monitoring};
+    \fill[green] (15, 8.85) circle (0.1);
+    \node[anchor=east, font=\footnotesize] at (14.8, 8.85) {System Online};
+
+    % Map Area
+    \draw[fill=blue!10] (1.2, 3.5) rectangle (11.5, 8.3);
+    \node[blue!30, font=\bfseries\Large] at (6.35, 5.9) {GIS Map View};
+    % Map details
+    \draw[white, thick] (3,4) to[out=45,in=200] (6,6) to[out=20,in=180] (10,7); % Coastline
+    \fill[blue!20] (3,4) to[out=45,in=200] (6,6) to[out=20,in=180] (10,7) -- (11.5,7) -- (11.5,3.5) -- (1.2,3.5) -- cycle; % Sea
+    \node[font=\tiny, text=blue!60] at (9, 5) {Mediterranean Sea};
+    
+    % Pins
+    \fill[red] (5, 6.5) circle (0.15); \node[above, font=\tiny, fill=white, opacity=0.8, text=red] at (5, 6.7) {Congestion};
+    \fill[orange] (8, 7.5) circle (0.15); \node[above, font=\tiny, fill=white, opacity=0.8, text=orange] at (8, 7.7) {Delay};
+
+    % Right Panel - Data Feed
+    \draw[fill=white] (11.7, 0) rectangle (16, 8.3);
+    \node[anchor=west, font=\bfseries] at (11.8, 8.0) {Data Streams};
+    
+    % Stream Items
+    \foreach \y/\t/\c in {6.8/AIS Tracking/green, 5.8/Weather API/green, 4.8/IoT Sensors/orange, 3.8/Customs DB/red} {
+        \draw[fill=gray!5] (11.9, \y) rectangle (15.8, \y+0.8);
+        \fill[\c] (12.1, \y+0.4) circle (0.1);
+        \node[anchor=west, font=\footnotesize] at (12.3, \y+0.4) {\t};
+    }
+
+    % Bottom Panel - Analytics
+    \draw[fill=white] (1.2, 0) rectangle (11.5, 3.3);
+    \node[anchor=west, font=\bfseries] at (1.4, 3.0) {Predictive Analytics: Truck Wait Times};
+    % Graph
+    \draw[->] (1.5, 0.5) -- (11, 0.5) node[right] {Time};
+    \draw[->] (1.5, 0.5) -- (1.5, 2.5) node[above] {Wait (min)};
+    \draw[blue, thick] (1.5, 1) -- (3, 1.2) -- (5, 2.2) -- (7, 1.5) -- (9, 0.8) -- (11, 0.6);
+    \draw[red, dashed] (1.5, 1.8) -- (11, 1.8);
+    \node[red, font=\tiny] at (10, 2.0) {Threshold};
+
+\end{tikzpicture}
+\caption{Use Case 1 Visualization: The TerraSync Operational Dashboard. The interface integrates real-time GIS visualization (center) with live n8n data streams (right) and predictive analytics (bottom) to support rapid decision-making.}
+\label{fig:dashboard_wireframe}
+\end{figure}
+
 \subsubsection{Use Case 2: Strategic Planning – Cross-Border Transport Corridor (Balkans)}
 \textbf{The Challenge:} Planning a highway connecting Montenegro and Albania requires integrating incompatible GIS datasets from two nations and assessing environmental impact on protected areas.
 \textbf{The TerraSync Solution:}
@@ -476,36 +572,33 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
 \end{itemize}
 \textbf{Outcome:} Zero casualties during extreme weather events and reduced property damage claims.
 
-\subsection{Innovation Feasibility and Evidence}
-
-\textbf{Technical Feasibility:}
-\begin{itemize}
-    \item n8n: Open-source, proven workflow automation (100K+ installations)
-    \item Digital twin technology: \$17.73B existing market with established vendors \cite{fortunebi2025digitaltwin}
-    \item AI/ML: Pre-trained models available (Azure, AWS, open-source)
-    \item Data availability: Public datasets + commercial partnerships
-\end{itemize}
-
-\textbf{Customer Validation:}
-\begin{itemize}
-    \item EU Cohesion Fund prioritizes digital infrastructure projects
-    \item 15 EU countries eligible for funding in target market
-    \item Growing demand: 40.1\% CAGR in digital twin adoption
-\end{itemize}
-
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.85, transform shape, font=\sffamily]
-    % Main Window
-    \draw[fill=gray!5, drop shadow] (0,0) rectangle (16,10);
-    \node[anchor=north west, text=gray] at (0.2,9.8) {TerraSync v1.0 - Operational View};
+\begin{tikzpicture}[scale=0.9, transform shape, font=\sffamily]
+    % Background Map
+    \fill[gray!10] (0,0) rectangle (14,7);
+    \draw[gray!30, step=1] (0,0) grid (14,7);
+    \node[anchor=north west, text=gray] at (0.2,6.8) {GIS Terrain Layer: Flood Risk Analysis};
 
-    % Sidebar
-    \fill[blue!90!black] (0,0) rectangle (1,9.2);
-    \foreach \y in {8,7,6,5} \fill[white, opacity=0.5] (0.2,\y) rectangle (0.8,\y+0.6);
+    % River
+    \draw[blue!40, line width=1.5cm, opacity=0.5] (0,2) sin (4,3) cos (8,1) sin (12,2) cos (14,1.5);
+    \draw[blue!60, line width=0.2cm] (0,2) sin (4,3) cos (8,1) sin (12,2) cos (14,1.5); % Core flow
+    \node[blue!60, font=\itshape] at (2, 2.5) {River Bed};
 
-    % Top Bar
-    \fill[white] (1,8.5) rectangle (16,9.2);
+    % Flood Zones (Heatmap)
+    \fill[red, opacity=0.3] (6,0) rectangle (10,3); % Critical Zone
+    \node[red!80!black, font=\bfseries] at (8, 0.5) {CRITICAL ZONE};
+    
+    \fill[orange, opacity=0.3] (4,2) rectangle (6,4); % Warning Zone
+    \fill[orange, opacity=0.3] (10,1) rectangle (12,3);
+
+    % City Blocks
+    \foreach \x in {1,2,3, 11,12,13} {
+        \fill[gray!60] (\x, 4.5) rectangle (\x+0.6, 5.1);
+        \fill[gray!60] (\x, 5.5) rectangle (\x+0.6, 6.1);
+    }
+    \node[font=\small] at (2.5, 6.5) {Residential Area (Safe)};
+ite] (1,8.5) rectangle (16,9.2);
     \node[anchor=west] at (1.2, 8.85) {\textbf{Limassol Port Authority} | Live Monitoring};
     \fill[green] (15, 8.85) circle (0.1);
     \node[anchor=east, font=\footnotesize] at (14.8, 8.85) {System Online};
