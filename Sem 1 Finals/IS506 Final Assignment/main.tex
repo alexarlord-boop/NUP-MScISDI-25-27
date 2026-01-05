@@ -493,7 +493,60 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
     \item Growing demand: 40.1\% CAGR in digital twin adoption
 \end{itemize}
 
-\textit{[Placeholder: Add prototype screenshots, wireframes, or concept visuals]}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, transform shape, font=\sffamily]
+    % Main Window
+    \draw[fill=gray!5, drop shadow] (0,0) rectangle (16,10);
+    \node[anchor=north west, text=gray] at (0.2,9.8) {TerraSync v1.0 - Operational View};
+
+    % Sidebar
+    \fill[blue!90!black] (0,0) rectangle (1,9.2);
+    \foreach \y in {8,7,6,5} \fill[white, opacity=0.5] (0.2,\y) rectangle (0.8,\y+0.6);
+
+    % Top Bar
+    \fill[white] (1,8.5) rectangle (16,9.2);
+    \node[anchor=west] at (1.2, 8.85) {\textbf{Limassol Port Authority} | Live Monitoring};
+    \fill[green] (15, 8.85) circle (0.1);
+    \node[anchor=east, font=\footnotesize] at (14.8, 8.85) {System Online};
+
+    % Map Area
+    \draw[fill=blue!10] (1.2, 3.5) rectangle (11.5, 8.3);
+    \node[blue!30, font=\bfseries\Large] at (6.35, 5.9) {GIS Map View};
+    % Map details
+    \draw[white, thick] (3,4) to[out=45,in=200] (6,6) to[out=20,in=180] (10,7); % Coastline
+    \fill[blue!20] (3,4) to[out=45,in=200] (6,6) to[out=20,in=180] (10,7) -- (11.5,7) -- (11.5,3.5) -- (1.2,3.5) -- cycle; % Sea
+    \node[font=\tiny, text=blue!60] at (9, 5) {Mediterranean Sea};
+    
+    % Pins
+    \fill[red] (5, 6.5) circle (0.15); \node[above, font=\tiny, fill=white, opacity=0.8, text=red] at (5, 6.7) {Congestion};
+    \fill[orange] (8, 7.5) circle (0.15); \node[above, font=\tiny, fill=white, opacity=0.8, text=orange] at (8, 7.7) {Delay};
+
+    % Right Panel - Data Feed
+    \draw[fill=white] (11.7, 0) rectangle (16, 8.3);
+    \node[anchor=west, font=\bfseries] at (11.8, 8.0) {Data Streams};
+    
+    % Stream Items
+    \foreach \y/\t/\c in {6.8/AIS Tracking/green, 5.8/Weather API/green, 4.8/IoT Sensors/orange, 3.8/Customs DB/red} {
+        \draw[fill=gray!5] (11.9, \y) rectangle (15.8, \y+0.8);
+        \fill[\c] (12.1, \y+0.4) circle (0.1);
+        \node[anchor=west, font=\footnotesize] at (12.3, \y+0.4) {\t};
+    }
+
+    % Bottom Panel - Analytics
+    \draw[fill=white] (1.2, 0) rectangle (11.5, 3.3);
+    \node[anchor=west, font=\bfseries] at (1.4, 3.0) {Predictive Analytics: Truck Wait Times};
+    % Graph
+    \draw[->] (1.5, 0.5) -- (11, 0.5) node[right] {Time};
+    \draw[->] (1.5, 0.5) -- (1.5, 2.5) node[above] {Wait (min)};
+    \draw[blue, thick] (1.5, 1) -- (3, 1.2) -- (5, 2.2) -- (7, 1.5) -- (9, 0.8) -- (11, 0.6);
+    \draw[red, dashed] (1.5, 1.8) -- (11, 1.8);
+    \node[red, font=\tiny] at (10, 2.0) {Threshold};
+
+\end{tikzpicture}
+\caption{Concept Wireframe: The TerraSync Operational Dashboard. The interface integrates real-time GIS visualization (center) with live n8n data streams (right) and predictive analytics (bottom) to support rapid decision-making.}
+\label{fig:dashboard_wireframe}
+\end{figure}
 
 \newpage
 
