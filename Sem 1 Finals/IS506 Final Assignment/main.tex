@@ -590,7 +590,7 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
 
 \node[box, fill=yellow!10] (vp) at (7,0) {
     \textbf{Value Propositions}\\[0.2cm]
-    • Open Canvas platform\\
+    • Transparent platform\\
     • Data sovereignty\\
     • Decision Theater visuals\\
     • Explainable AI models\\
@@ -664,7 +664,7 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
 \textbf{Secondary segment:} Large construction and engineering firms (€50M+ projects) operating in target regions, needing EU compliance documentation and project optimization capabilities.
 
 \subsubsection{Value Propositions}
-Our "Open Canvas" platform delivers rapid pilot deployment through transparent, open-source components (QGIS, Blender) rather than proprietary black-box solutions. We provide data sovereignty through on-premise deployment options, explainable decision support models for public sector accountability, and cinematic "Decision Theater" visualizations that bridge the gap between technical data and stakeholder understanding. The platform enables EU Green Deal compliance tracking and scales from municipal pilots to cross-border initiatives in months.
+TerraSync delivers rapid pilot deployment through transparent, open-source components (QGIS, Blender) rather than proprietary black-box solutions. We provide data sovereignty through on-premise deployment options, explainable decision support models for public sector accountability, and cinematic "Decision Theater" visualizations that bridge the gap between technical data and stakeholder understanding. The platform enables EU Green Deal compliance tracking and scales from municipal pilots to cross-border initiatives in months.
 
 \subsubsection{Channels}
 We reach customers through direct government procurement processes, EU partnership programs including EIB financing packages and Cohesion Fund applications, strategic alliances with system integrators like Accenture and Deloitte, presence at EU infrastructure summits and smart city conferences, and targeted digital marketing via LinkedIn, industry publications, and published case studies.
@@ -700,16 +700,16 @@ Strategic partnerships span the open-source ecosystem including QGIS and Blender
 \begin{tabular}{@{}p{0.2\textwidth}p{0.25\textwidth}p{0.2\textwidth}p{0.25\textwidth}@{}}
 \toprule
 \textbf{Category} & \textbf{Tool/Technology} & \textbf{Purpose} & \textbf{Rationale} \\ \midrule
-Orchestration & n8n & Workflow automation & Open-source, flexible, cost-effective \\
-Data Ingestion & Apache Kafka & High-volume streaming & Handles IoT sensor loads \\
-AI/ML & Azure ML + TensorFlow & Pattern recognition & Pre-trained + custom models \\
-Storage & TimescaleDB & Time-series data & Optimized for simulation histories \\
-Visualization & Grafana + Custom React & Real-time dashboards & Stakeholder-friendly \\
-Digital Twin 3D & Unity/Unreal Engine & Territory simulation & Visual representation \\
-GIS Processing & PostGIS + QGIS & Geospatial analysis & Industry standard \\
-API Management & Kong Gateway & API orchestration & Security, rate limiting \\
-Monitoring & Prometheus + Grafana & System monitoring & Real-time performance \\
-DevOps & Docker + Kubernetes & Container orchestration & Scalability \\
+Orchestration & n8n & Workflow automation & Open-source, auditable, low-code \\
+GIS Processing & QGIS + PostGIS & Geospatial analysis & Industry standard, transparent \\
+3D Visualization & Blender & Decision Theater & Cinematic quality, open-source \\
+Web Visualization & CesiumJS + WebGL & Operational dashboards & Browser-native, real-time \\
+Data Streaming & Apache Kafka & IoT sensor ingestion & Scalable, reliable \\
+Explainable AI & Scikit-learn + SHAP & Decision support & Transparent, auditable models \\
+Storage & PostGIS + TimescaleDB & Geospatial + time-series & Optimized for territory data \\
+API Management & Kong Gateway & Service orchestration & Security, rate limiting \\
+Monitoring & Prometheus + Grafana & System observability & Open-source, government-friendly \\
+DevOps & Docker + Kubernetes & Container orchestration & Scalability, portability \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -733,26 +733,29 @@ DevOps & Docker + Kubernetes & Container orchestration & Scalability \\
     \item IoT sensors → Anomaly detection → Predictive maintenance alert → Work order
 \end{enumerate}
 
-\subsubsection{AI/ML Pipeline}
+\subsubsection{Explainable AI Pipeline}
 \begin{itemize}
-    \item \textbf{Data Preprocessing:} Clean, normalize, and aggregate multi-source data
-    \item \textbf{Feature Engineering:} Extract predictive variables (weather patterns, traffic flows, construction activity)
-    \item \textbf{Model Types:}
+    \item \textbf{Data Preprocessing:} Clean, normalize, and aggregate multi-source data within QGIS environment
+    \item \textbf{Feature Engineering:} Extract predictive variables directly from geospatial layers (elevation, proximity, land use)
+    \item \textbf{Model Types (Transparent \& Auditable):}
     \begin{itemize}
-        \item Time-series forecasting (LSTM, Prophet)
-        \item Computer vision (YOLOv8 for satellite imagery)
-        \item Anomaly detection (Isolation Forest)
-        \item Optimization algorithms (genetic algorithms for resource allocation)
+        \item Rule-based decision trees for flood risk assessment
+        \item Linear regression for traffic congestion prediction
+        \item Constraint satisfaction for resource allocation
+        \item Monte Carlo simulations for scenario planning
     \end{itemize}
-    \item \textbf{Continuous Learning:} Models retrain monthly on new data
+    \item \textbf{Explainability:} SHAP values and decision tree visualizations for public sector accountability
+    \item \textbf{Validation:} Government stakeholder review process for model acceptance
 \end{itemize}
 
-\subsubsection{Digital Twin Rendering}
+\subsubsection{"Decision Theater" Visualization}
 \begin{itemize}
-    \item \textbf{Unity 3D Engine:} Real-time territory visualization
-    \item \textbf{LOD (Level of Detail):} Optimize rendering for large areas
-    \item \textbf{Data Layers:} Toggle infrastructure, weather, traffic, pollution
-    \item \textbf{Temporal Controls:} Playback historical data, simulate future scenarios
+    \item \textbf{Blender 3D Engine:} High-fidelity cinematic rendering for stakeholder presentations
+    \item \textbf{QGIS-to-Blender Pipeline:} Automated export of geospatial data to 3D scenes
+    \item \textbf{Scenario Simulation:} "What-if" visualizations for policy impact assessment
+    \item \textbf{CesiumJS Operational View:} Lightweight, browser-based daily monitoring
+    \item \textbf{Data Layer Toggle:} Real-time switching between infrastructure, environmental, and social data
+    \item \textbf{Temporal Controls:} Playback historical events and simulate future scenarios
 \end{itemize}
 
 \subsection{Scalability and Performance}
@@ -792,28 +795,29 @@ DevOps & Docker + Kubernetes & Container orchestration & Scalability \\
 
 \subsection{Integration Roadmap}
 
-\textbf{Phase 1 (Months 1-6): MVP}
+\textbf{Phase 1 (Months 1-6): TerraSync Foundation}
 \begin{itemize}
-    \item 5 core data sources
-    \item Basic n8n workflows
-    \item Single territory support (Cyprus)
-    \item 2D dashboard
+    \item QGIS + PostGIS core setup
+    \item 5 essential n8n workflows (weather, IoT, government databases)
+    \item Basic Blender visualization templates
+    \item Single territory deployment (Cyprus pilot)
 \end{itemize}
 
-\textbf{Phase 2 (Months 7-12): Enhanced}
+\textbf{Phase 2 (Months 7-12): Decision Theater}
 \begin{itemize}
-    \item 15+ data sources
-    \item Advanced AI models
+    \item Advanced Blender "Decision Theater" capabilities
+    \item 15+ data source integrations
+    \item CesiumJS web interface for daily operations
     \item Multi-territory support (3 countries)
-    \item 3D visualization
+    \item Explainable AI model library
 \end{itemize}
 
-\textbf{Phase 3 (Year 2): Enterprise}
+\textbf{Phase 3 (Year 2): Governance \& Scale}
 \begin{itemize}
-    \item 30+ data sources
-    \item White-label capabilities
-    \item Mobile applications
-    \item API marketplace for third-party extensions
+    \item 30+ government-certified data workflows
+    \item White-label municipal deployment packages
+    \item Mobile applications for field workers
+    \item Open-source community ecosystem (workflow marketplace)
 \end{itemize}
 
 \newpage
