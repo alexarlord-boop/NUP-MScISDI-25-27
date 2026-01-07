@@ -424,6 +424,25 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
     \item \textbf{Open Standards:} All data exportable in non-proprietary formats (GeoJSON, IFC) to prevent vendor lock-in.
 \end{itemize}
 
+\subsubsection{Minimum Viable Product (MVP)}
+
+The TerraSync MVP focuses on delivering immediate value through the Cyprus pilot while establishing the foundation for territorial expansion. This initial release prioritizes essential functionality over comprehensive features, enabling rapid deployment and iterative improvement based on real government feedback.
+
+\paragraph{Core Features}
+The MVP delivers territory-wide data integration through five essential n8n workflows connecting weather services, maritime traffic, infrastructure databases, and IoT sensor networks. Basic QGIS processing provides geospatial analysis with coordinate system normalization and data layer management. A simplified CesiumJS web interface enables government staff to monitor territory conditions without specialized training. Rule-based alerting triggers notifications for predefined thresholds like port congestion or weather warnings.
+
+\paragraph{Initial Data Sources}
+Five strategic data integrations establish the platform foundation. Cyprus Meteorological Service provides real-time weather data and forecasting through automated API connections. AIS maritime tracking delivers vessel positions and estimated arrival times for Limassol Port operations. OpenStreetMap and Cyprus cadastral databases supply authoritative geographic and infrastructure layers. Municipal databases contribute road network status, traffic patterns, and utility information. IoT sensor pilots in two locations provide proof-of-concept for environmental monitoring expansion.
+
+\paragraph{Essential Visualization}
+The MVP visualization balances functionality with development speed. CesiumJS web interface displays real-time territory data with basic 3D terrain and infrastructure overlays accessible through standard browsers. Interactive data layer toggles let users examine individual information sources or combined views. Time-series charts show historical trends and current conditions for key performance indicators. Basic Blender templates create static 3D renderings for stakeholder presentations, establishing the foundation for future "Decision Theater" capabilities.
+
+\paragraph{n8n Workflow Library}
+Five core workflows automate critical data processes without custom coding requirements. Weather data ingestion pulls meteorological information every hour, processes forecasts, and triggers alerts for extreme conditions. Port logistics monitoring correlates vessel arrivals with customs capacity to predict congestion patterns. Infrastructure status tracking monitors road closures, utility outages, and maintenance schedules from municipal systems. Environmental sensor integration collects IoT data from pilot locations and validates data quality. Stakeholder notification workflows deliver automated reports and alerts through email, SMS, and dashboard updates.
+
+\paragraph{Cyprus Pilot Specifications}
+The Cyprus deployment addresses immediate government planning needs while demonstrating scalability potential. Coverage spans the Limassol district including port operations, urban areas, and rural communities affected by seasonal tourism. Integration focuses on existing government IT systems including customs databases, municipal planning records, and emergency services communications.
+
 \subsection{Value Proposition}
 
 \textbf{For Government Ministries:}
@@ -476,16 +495,16 @@ TerraSync democratizes digital twin technology by fusing **Open Source Geospatia
 \end{itemize}
 \textbf{Outcome:} Zero casualties during extreme weather events and reduced property damage claims.
 
-\subsubsection{Use Case 4: Rural Sustainability – Forest Village Management (Troodos Mountains, Cyprus)}
-\textbf{The Challenge:} Traditional forest villages in the Troodos Mountains face seasonal abandonment during summer months, creating fire risks, dam management issues, and unsustainable tourism patterns concentrated during winter holidays. Villages lack year-round monitoring systems to manage water resources, detect early fire indicators, and optimize seasonal infrastructure usage.
+\subsubsection{Use Case 4: Rural Sustainability – Forest Village Revitalization (Troodos Mountains, Cyprus)}
+\textbf{The Challenge:} Traditional forest villages in the Troodos Mountains suffer from seasonal population decline and limited year-round economic activity, while facing increasing climate-related risks including wildfires and water scarcity. Government planners need comprehensive data to design infrastructure investments and policies that can revive these communities, attract sustainable tourism, and create year-round economic opportunities.
 \textbf{The TerraSync Solution:}
 \begin{itemize}
-    \item \textbf{Environmental Monitoring:} IoT sensors track soil moisture, temperature, and humidity levels in abandoned properties and surrounding forest areas, feeding data through n8n workflows to identify fire risk zones.
-    \item \textbf{Water Resource Management:} QGIS integrates dam water levels, precipitation data, and seasonal usage patterns to optimize water distribution between active and dormant village areas.
-    \item \textbf{Tourism Redistribution:} Blender creates immersive 3D experiences showcasing off-season village attractions, enabling virtual tourism marketing that distributes visitor load throughout the year.
-    \item \textbf{Predictive Alerts:} Machine learning models analyze historical patterns to predict optimal times for infrastructure maintenance, seasonal population changes, and resource allocation needs.
+    \item \textbf{Environmental Risk Assessment:} IoT sensors monitor climate conditions including soil moisture, temperature, and humidity to help government planners understand wildfire patterns and water resource dynamics for informed infrastructure investment decisions.
+    \item \textbf{Infrastructure Planning:} QGIS integrates dam capacity, road access, telecommunications coverage, and seasonal utility usage to identify optimal locations for government investment in broadband, renewable energy, and water management systems.
+    \item \textbf{Economic Development Visualization:} Blender creates compelling 3D presentations showing potential development scenarios to attract private investment, showcase tourism opportunities, and demonstrate community revival possibilities to EU funding bodies.
+    \item \textbf{Investment Impact Modeling:} Predictive analytics help government planners assess which infrastructure improvements will generate the highest economic return and community sustainability outcomes.
 \end{itemize}
-\textbf{Outcome:} Reduced wildfire incidents by 30\% through early detection, improved water resource efficiency by 20\%, and increased off-season tourism revenue by 15\% through enhanced digital marketing capabilities.
+\textbf{Outcome:} Government gains data-driven insights to target €2M in EU rural development funding, leading to enhanced broadband infrastructure that enables remote work opportunities, sustainable tourism growth, and gradual community revitalization with 25\% increase in year-round residents.
 
 \subsection{Innovation Feasibility and Evidence}
 
