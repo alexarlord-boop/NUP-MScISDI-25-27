@@ -717,108 +717,41 @@ DevOps & Docker + Kubernetes & Container orchestration & Scalability, portabilit
 \subsection{Core Platform Components}
 
 \subsubsection{n8n Orchestration Hub}
-\textbf{Why n8n is central to our competitive advantage:}
-\begin{itemize}
-    \item \textbf{Visual Workflow Design:} Non-developers can create integrations
-    \item \textbf{400+ Pre-built Connectors:} APIs, databases, webhooks
-    \item \textbf{Custom Code Execution:} Python, JavaScript for specialized logic
-    \item \textbf{Self-hosted:} Data sovereignty compliance
-    \item \textbf{Cost:} Open-source vs. \$10K-50K/month for enterprise iPaaS
-\end{itemize}
+The n8n workflow automation platform serves as the central nervous system of TerraSync, providing significant competitive advantages through its visual workflow design approach that enables non-technical government staff to create and modify data integrations without extensive programming knowledge. With over 400 pre-built connectors spanning APIs, databases, and webhooks, the platform significantly reduces integration complexity while supporting custom code execution in Python and JavaScript for specialized governmental logic requirements.
 
-\textbf{Example Workflows:}
-\begin{enumerate}
-    \item Weather API → Process → Update territory risk scores → Alert stakeholders
-    \item Satellite imagery → Object detection AI → Infrastructure change detection → Report
-    \item IoT sensors → Anomaly detection → Predictive maintenance alert → Work order
-\end{enumerate}
+The self-hosted deployment model ensures complete data sovereignty compliance, addressing critical government concerns about data residency and control. From a cost perspective, the open-source foundation provides substantial savings compared to enterprise integration platforms that typically cost between \$10K-50K monthly. Representative workflows demonstrate the platform's versatility: weather data automatically updates territory risk assessments and triggers stakeholder alerts, satellite imagery feeds object detection models that generate infrastructure change reports, and IoT sensor networks enable predictive maintenance workflows with automated work order generation.
 
 \subsubsection{Explainable AI Pipeline}
-\begin{itemize}
-    \item \textbf{Data Preprocessing:} Clean, normalize, and aggregate multi-source data within QGIS environment
-    \item \textbf{Feature Engineering:} Extract predictive variables directly from geospatial layers (elevation, proximity, land use)
-    \item \textbf{Model Types (Transparent \& Auditable):}
-    \begin{itemize}
-        \item Rule-based decision trees for flood risk assessment
-        \item Linear regression for traffic congestion prediction
-        \item Constraint satisfaction for resource allocation
-        \item Monte Carlo simulations for scenario planning
-    \end{itemize}
-    \item \textbf{Explainability:} SHAP values and decision tree visualizations for public sector accountability
-    \item \textbf{Validation:} Government stakeholder review process for model acceptance
-\end{itemize}
+TerraSync's artificial intelligence approach prioritizes transparency and accountability over algorithmic complexity, recognizing that government stakeholders require understanding and justification for automated decisions. The data preprocessing workflow operates directly within the QGIS environment, ensuring spatial accuracy while cleaning, normalizing, and aggregating multi-source datasets. Feature engineering extracts predictive variables directly from established geospatial layers, incorporating elevation models, proximity analyses, and land use classifications that government planners already understand and trust.
+
+The platform employs transparent and auditable model architectures including rule-based decision trees for flood risk assessment, linear regression for traffic congestion prediction, constraint satisfaction algorithms for resource allocation, and Monte Carlo simulations for scenario planning. Each model type provides inherent explainability, with SHAP values and decision tree visualizations ensuring public sector accountability requirements are met. Government stakeholder review processes validate model acceptance before deployment, establishing trust through collaborative development rather than imposed solutions.
 
 \subsubsection{"Decision Theater" Visualization}
-\begin{itemize}
-    \item \textbf{Blender 3D Engine:} High-fidelity cinematic rendering for stakeholder presentations
-    \item \textbf{QGIS-to-Blender Pipeline:} Automated export of geospatial data to 3D scenes
-    \item \textbf{Scenario Simulation:} "What-if" visualizations for policy impact assessment
-    \item \textbf{CesiumJS Operational View:} Lightweight, browser-based daily monitoring
-    \item \textbf{Data Layer Toggle:} Real-time switching between infrastructure, environmental, and social data
-    \item \textbf{Temporal Controls:} Playback historical events and simulate future scenarios
-\end{itemize}
+The platform's dual visualization approach addresses the distinct needs of strategic decision-making and operational monitoring through complementary rendering systems. Blender's professional 3D engine generates high-fidelity cinematic presentations for stakeholder meetings, ministerial briefings, and public consultations where visual impact and narrative clarity drive policy acceptance. The automated QGIS-to-Blender pipeline ensures that complex geospatial datasets transform seamlessly into accessible 3D scenes without manual modeling overhead.
+
+For daily operations, CesiumJS provides lightweight, browser-based monitoring capabilities that government staff can access without specialized hardware or software installations. The platform supports dynamic scenario simulations enabling "what-if" visualizations for policy impact assessment, while real-time data layer toggling allows users to examine infrastructure, environmental, and social data independently or in combination. Temporal controls enable historical event playback and future scenario simulation, supporting both retrospective analysis and forward-looking planning processes.
 
 \subsection{Scalability and Performance}
 
-\textbf{Current Capacity:}
-\begin{itemize}
-    \item Process 1M+ data points per day
-    \item Support 5-10 concurrent territories
-    \item Sub-second dashboard updates
-\end{itemize}
+The current TerraSync architecture demonstrates robust operational capacity, processing over one million data points daily while supporting five to ten concurrent territorial deployments with sub-second dashboard response times. This baseline performance reflects careful optimization of the underlying PostGIS spatial database and efficient n8n workflow orchestration that minimizes computational overhead.
 
-\textbf{Scaling Strategy:}
-\begin{itemize}
-    \item Kubernetes horizontal auto-scaling
-    \item CDN for global dashboard access
-    \item Database sharding by territory
-    \item Multi-region cloud deployment
-\end{itemize}
+The scaling strategy employs Kubernetes horizontal auto-scaling to dynamically allocate computational resources based on demand, ensuring consistent performance during peak usage periods such as emergency response situations or major policy announcements. Global dashboard access utilizes content delivery networks to reduce latency for geographically distributed users, while database sharding by territory enables independent scaling of individual deployments. Multi-region cloud deployment provides redundancy and localized performance optimization, supporting the platform's expansion across diverse governmental jurisdictions with varying technical infrastructure capabilities.
 
 \subsection{Security and Compliance}
 
-\textbf{Data Security:}
-\begin{itemize}
-    \item End-to-end encryption (TLS 1.3)
-    \item Role-based access control (RBAC)
-    \item Data anonymization for sensitive information
-    \item SOC 2 Type II compliance roadmap
-\end{itemize}
+Data security implementation follows industry best practices with end-to-end encryption utilizing TLS 1.3 protocols, ensuring data integrity during transmission between system components and external interfaces. Role-based access control provides granular permission management enabling government administrators to restrict data access according to organizational hierarchies and functional responsibilities. Sensitive information undergoes automated anonymization processes where appropriate, while the platform maintains a SOC 2 Type II compliance roadmap addressing audit and certification requirements for government technology deployments.
 
-\textbf{GDPR Compliance:}
-\begin{itemize}
-    \item Data minimization principles
-    \item Right to erasure implementation
-    \item Data Processing Agreements with partners
-    \item EU data residency (servers in Frankfurt/Dublin)
-\end{itemize}
+European GDPR compliance incorporates data minimization principles that collect and retain only necessary information for operational purposes, supported by comprehensive right to erasure implementations that enable citizens and organizations to request data removal. Data Processing Agreements with external partners establish clear responsibilities and limitations for information sharing, while EU data residency requirements are met through strategic server placement in Frankfurt and Dublin facilities that ensure European data remains within appropriate jurisdictional boundaries.
 
 \subsection{Integration Roadmap}
 
-\textbf{Phase 1 (Months 1-6): TerraSync Foundation}
-\begin{itemize}
-    \item QGIS + PostGIS core setup
-    \item 5 essential n8n workflows (weather, IoT, government databases)
-    \item Basic Blender visualization templates
-    \item Single territory deployment (Cyprus pilot)
-\end{itemize}
+The three-phase development approach balances immediate deployment capabilities with long-term scalability requirements, ensuring that government partners can realize value quickly while building toward comprehensive territorial intelligence systems. 
 
-\textbf{Phase 2 (Months 7-12): Decision Theater}
-\begin{itemize}
-    \item Advanced Blender "Decision Theater" capabilities
-    \item 15+ data source integrations
-    \item CesiumJS web interface for daily operations
-    \item Multi-territory support (3 countries)
-    \item Explainable AI model library
-\end{itemize}
+Phase 1 establishes the TerraSync foundation during months one through six, implementing the core QGIS and PostGIS geospatial infrastructure alongside five essential n8n workflows connecting weather services, IoT networks, and government databases. Basic Blender visualization templates provide immediate stakeholder communication capabilities, while the Cyprus pilot deployment serves as proof-of-concept validation.
 
-\textbf{Phase 3 (Year 2): Governance \& Scale}
-\begin{itemize}
-    \item 30+ government-certified data workflows
-    \item White-label municipal deployment packages
-    \item Mobile applications for field workers
-    \item Open-source community ecosystem (workflow marketplace)
-\end{itemize}
+Phase 2 expands capabilities during months seven through twelve with advanced "Decision Theater" functionality that transforms stakeholder engagement through immersive visualization experiences. Integration scope increases to fifteen or more data sources while CesiumJS web interfaces enable daily operational monitoring by government staff. Multi-territory support extends platform utility across three countries, accompanied by an explainable AI model library that provides transparent decision support for diverse governmental applications.
+
+Phase 3 achieves governance and scale objectives during year two through development of thirty government-certified data workflows that meet public sector audit and compliance standards. White-label municipal deployment packages enable rapid expansion across smaller governmental entities, while mobile applications provide field worker access to territorial intelligence. The open-source community ecosystem evolves into a collaborative workflow marketplace where governmental organizations can share integration patterns and analytical models, fostering innovation while reducing individual development costs.
 
 \newpage
 
