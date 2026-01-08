@@ -386,7 +386,53 @@ TerraSync transforms strategic infrastructure planning by combining **Open Sourc
 
 \subsubsection{Technology Architecture}
 
-\textit{[Placeholder: Insert system architecture diagram: Planning Data Sources $\rightarrow$ n8n Integration Hub $\rightarrow$ QGIS Analysis Engine $\rightarrow$ Blender Scenario Visualization]}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=2cm,
+    data/.style={rectangle, rounded corners, fill=blue!20, draw=blue!80, text width=2.2cm, text centered, minimum height=1cm, font=\footnotesize},
+    process/.style={rectangle, fill=green!20, draw=green!80, text width=2.8cm, text centered, minimum height=1.2cm, font=\footnotesize\bfseries},
+    output/.style={rectangle, rounded corners, fill=orange!20, draw=orange!80, text width=2.5cm, text centered, minimum height=1cm, font=\footnotesize},
+    arrow/.style={->, >=stealth, thick, color=gray!70}
+]
+
+% Data Sources (Left side)
+\node[data] (cadastral) at (0,3) {Cadastral\\Systems};
+\node[data] (eu) at (0,1.5) {EU Statistical\\Databases};
+\node[data] (transport) at (0,0) {Transport\\Networks};
+\node[data] (master) at (0,-1.5) {Municipal\\Master Plans};
+
+% Central Processing
+\node[process] (n8n) at (4,1) {n8n\\Integration\\Hub};
+\node[process] (qgis) at (8,1) {QGIS\\Analysis\\Engine};
+
+% Outputs (Right side)
+\node[output] (cesium) at (12,2.5) {CesiumJS\\Planning\\Interface};
+\node[output] (blender) at (12,1) {Blender\\Decision\\Theater};
+\node[output] (reports) at (12,-0.5) {Planning\\Reports \&\\Funding Proposals};
+
+% Arrows from data sources to n8n
+\draw[arrow] (cadastral) -- (n8n);
+\draw[arrow] (eu) -- (n8n);
+\draw[arrow] (transport) -- (n8n);
+\draw[arrow] (master) -- (n8n);
+
+% Arrow from n8n to QGIS
+\draw[arrow] (n8n) -- (qgis) node[midway, above, font=\tiny, align=center] {Harmonized\\Planning Data};
+
+% Arrows from QGIS to outputs
+\draw[arrow] (qgis) -- (cesium) node[midway, above right, font=\tiny, align=center] {Interactive\\Analysis};
+\draw[arrow] (qgis) -- (blender) node[midway, right, font=\tiny, align=center] {3D\\Scenarios};
+\draw[arrow] (qgis) -- (reports) node[midway, below right, font=\tiny, align=center] {Strategic\\Intelligence};
+
+% Background boxes
+\draw[dashed, gray!50] (-0.8,3.7) rectangle (0.8,-2.2) node[below, font=\tiny, text=gray!70] {Planning Data Sources};
+\draw[dashed, gray!50] (11.2,3.2) rectangle (12.8,-1.2) node[below, font=\tiny, text=gray!70] {Decision Support Tools};
+
+\end{tikzpicture}
+\caption{TerraSync Strategic Planning Architecture: From territorial data integration through analysis to decision support visualization}
+\label{fig:terrasync_architecture}
+\end{figure}
 
 \textbf{1. Data Integration Layer (n8n Orchestration):}
 \begin{itemize}
@@ -442,35 +488,37 @@ The Cyprus deployment addresses immediate territorial development challenges whi
 
 \subsection{Value Proposition}
 
+TerraSync enables emerging EU economies to build their own NSW-style digital twin at a fraction of the cost and time. The NSW Spatial Digital Twin demonstrates the power of comprehensive territorial planning platforms, but required substantial custom development resources that smaller governments cannot afford \cite{nswdigitaltwin2024}. TerraSync provides the platform foundation so resource-constrained governments can achieve similar strategic planning capabilities through open-source orchestration.
+
 \textbf{For Government Ministries:}
 \begin{itemize}
-    \item Reduce infrastructure waste by 25\% through predictive optimization
-    \item Achieve EU Green Deal compliance with automated sustainability reporting
-    \item Make data-driven decisions with real-time territory intelligence
-    \item Deploy in weeks (vs. 1-2 years for custom solutions)
-    \item Pay fraction of cost compared to custom digital twin development
+    \item Create NSW-equivalent digital twin capabilities at 1/10th the development cost
+    \item Deploy comprehensive territorial planning platform in months rather than years
+    \item Achieve cross-border infrastructure coordination (EU-specific advantage over single-country systems)
+    \item Optimize EU funding allocation through transparent, data-driven planning scenarios
+    \item Maintain data sovereignty with open-source architecture versus proprietary vendor lock-in
 \end{itemize}
 
 \textbf{For Construction Enterprises:}
 \begin{itemize}
-    \item Optimize resource allocation across multiple projects
-    \item Reduce delays through predictive risk assessment
-    \item Improve bid accuracy with better data
-    \item Demonstrate sustainability compliance to clients
+    \item Access government-grade territorial intelligence for project planning and bidding
+    \item Demonstrate EU Green Deal compliance through standardized environmental impact modeling
+    \item Coordinate cross-border infrastructure projects with compatible planning systems
+    \item Reduce project risk through comprehensive territorial analysis and scenario planning
 \end{itemize}
 
 \subsection{Customer Journey and Use Cases}
 
-\subsubsection{Use Case 1: Operational Efficiency – Smart Port Logistics (Limassol, Cyprus)}
-\textbf{The Challenge:} Port authorities struggle with congestion due to disconnected data systems (maritime traffic, customs databases, weather forecasts), leading to truck idle times and increased emissions.
+\subsubsection{Use Case 1: Strategic Infrastructure Planning – Cyprus National Transport Master Plan}
+\textbf{The Challenge:} Cyprus Ministry of Transport seeks to optimize a €500M investment in national transport infrastructure over the next decade, including highway upgrades, port expansions, and cross-border connections to regional partners. Traditional planning relies on disconnected studies and static reports, making it difficult to assess trade-offs between different investment scenarios.
 \textbf{The TerraSync Solution:}
 \begin{itemize}
-    \item \textbf{Ingestion:} n8n workflows pull real-time AIS ship tracking data and local weather API feeds.
-    \item \textbf{Processing:} A rule-based AI model correlates incoming vessel volume with customs processing capacity.
-    \item \textbf{Action:} The system triggers automated alerts to logistics companies via SMS/Email to stagger truck arrivals.
-    \item \textbf{Visualization:} Operators view a live CesiumJS dashboard showing vessel positions and yard occupancy.
+    \item \textbf{Data Integration:} n8n workflows connect transport databases, EU funding criteria, environmental impact studies, and cross-border infrastructure plans into unified territorial model.
+    \item \textbf{Scenario Comparison:} QGIS analysis compares multiple development paths - highway prioritization vs. port expansion vs. balanced approach - with transparent cost-benefit modeling.
+    \item \textbf{Stakeholder Visualization:} Blender creates compelling 3D scenarios showing long-term territorial impacts for ministerial decisions and EU funding presentations.
+    \item \textbf{Cross-border Coordination:} Platform integrates Greek transport plans and proposed regional connections for comprehensive strategic planning.
 \end{itemize}
-\textbf{Outcome:} Reduced truck idle time by 15\% and lowered port carbon emissions (Green Deal alignment).
+\textbf{Outcome:} Government selects optimal €500M investment strategy in 3 months instead of 18 months, securing €200M in EU Cohesion Fund support through data-driven project justification.
 
 \subsubsection{Use Case 2: Strategic Planning – Cross-Border Transport Corridor (Balkans)}
 \textbf{The Challenge:} Planning a highway connecting Montenegro and Albania requires integrating incompatible GIS datasets from two nations and assessing environmental impact on protected areas.
@@ -482,26 +530,27 @@ The Cyprus deployment addresses immediate territorial development challenges whi
 \end{itemize}
 \textbf{Outcome:} Accelerated planning approval by 6 months and secured EU Cohesion funding through transparent impact assessment.
 
-\subsubsection{Use Case 3: Climate Resilience – Urban Flood Defense System}
-\textbf{The Challenge:} A mid-sized municipality faces recurring flash floods but lacks the budget for enterprise-grade hydrological modeling software.
+\subsubsection{Use Case 3: Climate Resilience – Strategic Flood Defense Planning}
+\textbf{The Challenge:} A mid-sized European municipality needs to develop a comprehensive 20-year climate adaptation strategy, including €50M in flood defense infrastructure investments. Traditional planning lacks integrated territorial analysis and struggles to justify complex infrastructure decisions to citizens and EU funding bodies.
 \textbf{The TerraSync Solution:}
 \begin{itemize}
-    \item \textbf{Sensing:} Low-cost IoT rain gauges are deployed in key catchment areas, connected via LoRaWAN.
-    \item \textbf{Analysis:} An explainable hydrological model runs on the QGIS terrain layer, predicting runoff paths based on current rainfall intensity.
-    \item \textbf{Response:} n8n triggers automated road closure warnings to municipal police and updates the public web map.
+    \item \textbf{Territorial Risk Assessment:} QGIS integrates climate projections, terrain analysis, urban development patterns, and existing infrastructure to model long-term flood scenarios and identify strategic intervention points.
+    \item \textbf{Investment Scenario Modeling:} Platform compares multiple defense strategies - natural flood management vs. engineered solutions vs. hybrid approaches - with comprehensive cost-benefit analysis and EU Green Deal alignment.
+    \item \textbf{Stakeholder Communication:} Blender creates compelling visualizations showing 50-year climate scenarios and proposed infrastructure solutions for city council decisions and public consultation processes.
+    \item \textbf{Funding Optimization:} n8n workflows connect project specifications with EU climate adaptation funding criteria, automatically generating compliance reports and grant applications.
 \end{itemize}
-\textbf{Outcome:} Zero casualties during extreme weather events and reduced property damage claims.
+\textbf{Outcome:} Municipality develops evidence-based climate strategy in 6 months, secures €30M in EU climate funding, and gains public support through transparent scenario communication.
 
 \subsubsection{Use Case 4: Rural Sustainability – Forest Village Revitalization (Troodos Mountains, Cyprus)}
-\textbf{The Challenge:} Traditional forest villages in the Troodos Mountains suffer from seasonal population decline and limited year-round economic activity, while facing increasing climate-related risks including wildfires and water scarcity. Government planners need comprehensive data to design infrastructure investments and policies that can revive these communities, attract sustainable tourism, and create year-round economic opportunities.
+\textbf{The Challenge:} Cyprus government needs to develop a comprehensive rural development strategy for declining mountain communities, optimizing €15M in EU rural development funding across multiple villages while balancing economic development, environmental protection, and cultural preservation. Traditional planning lacks integrated territorial analysis for complex multi-criteria decision-making.
 \textbf{The TerraSync Solution:}
 \begin{itemize}
-    \item \textbf{Environmental Risk Assessment:} IoT sensors monitor climate conditions including soil moisture, temperature, and humidity to help government planners understand wildfire patterns and water resource dynamics for informed infrastructure investment decisions.
-    \item \textbf{Infrastructure Planning:} QGIS integrates dam capacity, road access, telecommunications coverage, and seasonal utility usage to identify optimal locations for government investment in broadband, renewable energy, and water management systems.
-    \item \textbf{Economic Development Visualization:} Blender creates compelling 3D presentations showing potential development scenarios to attract private investment, showcase tourism opportunities, and demonstrate community revival possibilities to EU funding bodies.
-    \item \textbf{Investment Impact Modeling:} Predictive analytics help government planners assess which infrastructure improvements will generate the highest economic return and community sustainability outcomes.
+    \item \textbf{Territorial Development Analysis:} QGIS integrates demographic trends, infrastructure capacity, environmental constraints, and tourism potential to identify optimal locations for strategic investments in broadband, renewable energy, and cultural facilities.
+    \item \textbf{Multi-scenario Planning:} Platform models different development strategies - eco-tourism focus vs. digital nomad hubs vs. agricultural innovation centers - with comprehensive impact assessment and EU funding alignment analysis.
+    \item \textbf{Investment Visualization:} Blender creates compelling presentations showing potential village transformations and regional development impacts for ministry decisions, EU funding applications, and community engagement.
+    \item \textbf{Cross-village Coordination:} n8n workflows optimize resource allocation across multiple communities, ensuring complementary rather than competing development strategies that maximize territorial synergies.
 \end{itemize}
-\textbf{Outcome:} Government gains data-driven insights to target €2M in EU rural development funding, leading to enhanced broadband infrastructure that enables remote work opportunities, sustainable tourism growth, and gradual community revitalization with 25\% increase in year-round residents.
+\textbf{Outcome:} Government develops evidence-based rural strategy, secures €12M in targeted EU rural development funding, and achieves 25\% increase in year-round rural employment through strategic infrastructure investments and coordinated territorial development.
 
 \subsection{Innovation Feasibility and Evidence}
 
@@ -509,15 +558,17 @@ The Cyprus deployment addresses immediate territorial development challenges whi
 \begin{itemize}
     \item n8n: Open-source, proven workflow automation (100K+ installations)
     \item Digital twin technology: \$17.73B existing market with established vendors \cite{fortunebi2025digitaltwin}
-    \item AI/ML: Pre-trained models available (Azure, AWS, open-source)
-    \item Data availability: Public datasets + commercial partnerships
+    \item Proven territorial planning capabilities: NSW Spatial Digital Twin demonstrates comprehensive government-scale implementation \cite{nswdigitaltwin2024}
+    \item QGIS/Blender ecosystem: Mature open-source tools with extensive government adoption
+    \item Data availability: EU statistical databases, cadastral systems, transport networks
 \end{itemize}
 
-\textbf{Customer Validation:}
+\textbf{Market Validation:}
 \begin{itemize}
-    \item EU Cohesion Fund prioritizes digital infrastructure projects
-    \item 15 EU countries eligible for funding in target market
-    \item Growing demand: 40.1\% CAGR in digital twin adoption
+    \item NSW Digital Twin proves demand for comprehensive territorial planning platforms among government users
+    \item EU Cohesion Fund prioritizes digital infrastructure projects with €392B allocation for 2021-2027
+    \item 15 EU countries eligible for funding in target market create substantial addressable opportunity
+    \item Growing demand: 40.1\% CAGR in digital twin adoption validates market timing \cite{fortunebi2025digitaltwin}
 \end{itemize}
 
 \begin{figure}[H]
